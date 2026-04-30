@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+  <title>예약 및 결제창</title>
+  <style>
+*{
+                padding:0px; 
+                margin:0px; 
+                box-sizing:border-box; 
+                letter-spacing: 2px;
+            }
+            body{
+              background-color: #f7f4eb;
+              
+            }
+            a{
+                text-decoration:none;
+                color:#1f1f1f;
+            }
+            /*헤더*/
+            .header1{
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;
+                height: 60px;
+                z-index: 100;
+                background-color: #31422e;
+                
+            }
+            .header2{
+              visibility: hidden;
+              width: 100%;
+              height: 60px;
+              
+            }
+            .header1 a{
+              color:white;
+              letter-spacing: 5px;
+            }
+            ul{
+                list-style: none;
+            }
+            .header-left{
+              width:20%;
+              height:60px;
+              float:left;
+            }
+            .header-left>a>img{
+              width:25px;
+              height:35px;
+              margin-left:30px;
+              margin-top:12px;
+            }
+            .header-left>a>span{
+              display:inline-block;
+              font-size: 15px;
+              margin-left:10px;
+              font-weight: 800;
+              letter-spacing: 5px;
+              text-align: justify;
+            }
+            .header-center{
+              width:60%;
+              text-align: center;
+              float:left;
+              margin-top:16px;
+              
+            }
+            .header-center>ul>li{
+              display:inline-block;
+              width:20%;
+              font-size: 15px;
+            }
+            .header-right{
+              width:10%;
+              float:right;
+              margin-top:16px;
+            }
+            .header-right a{
+              border-radius: 18px;
+              border:2px solid white;
+              padding:5px 15px;
+              font-size: 14px;
+              letter-spacing: 3px;
+            }
+            .header-center a:hover{
+              text-decoration: underline;
+            }
+            .header-right a:hover{
+              color:#31422e;
+              background-color: white;
+            }
+
+.container {
+  display: flex;
+  position: relative;
+  margin-top:15px;
+  
+  
+}
+
+
+.left {
+  width: 60%;
+  padding: 20px;
+  margin-left: 100px;
+  
+}
+.left h2{
+    margin-bottom:30px;
+}
+
+form label {
+  display: block;
+  margin-bottom:10px;
+  font-weight: bold;
+
+}
+.other-label{
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+form input:hover{
+    background-color:#cde1d0;
+
+}
+
+
+.payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+
+.payment-methods button {
+  width:100px;
+  height:40px;
+  flex: 1 1 30%;
+  border-radius: 8px;
+  border: 1.5px solid #ded8cf;
+  cursor: pointer;
+  background-color: #fdf8e7;
+}
+.payment-methods button img{
+    margin-top:3px;
+}
+.payment-methods button span{
+    position:relative;
+    top:-4px;
+    left:5px;
+}
+
+.payment-methods button:hover {
+  background-color: white;
+  border:none;
+  box-shadow: 2px 2px 4px #31422e;
+}
+.payment-methods button:focus{
+    background-color:#31422e;
+    color:white;
+    font-weight: bold;
+}
+
+
+.total {
+  margin-top: 10px;
+  font-weight: bold;
+  color: red;
+}
+
+
+.arrow {
+  text-decoration: none;
+  color: black;
+}
+
+sup {
+  color: red;
+}
+.right {
+  width: 40%;
+  
+}
+
+.hotel-card {
+  border: 3px solid #ddd;
+  border-radius: 16px;
+  background-color:white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  width: 300px;
+  font-family: 'Apple SD Gothic Neo', sans-serif;
+  position:fixed;
+  right:100px;
+  top:180px;
+  box-shadow: 3px 3px 5px rgb(107, 112, 107);
+}
+
+.hotel-card h3 {
+  font-size: 17px;
+  color: #2e2c29;
+  margin: 10px;
+}
+
+.hotel-image {
+  width: 100%;
+  height: 200px;
+  
+}
+
+.hotel-info p {
+  margin:0px 15px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.label {
+  display: inline-block;
+  width: 80px;
+  margin-left:5px;
+  margin-bottom:5px;
+  color: #888;
+  font-weight: bold;
+}
+
+.payment-section {
+  display: flex;
+  margin: 70px 0px;
+  
+  
+}
+
+.payment-card, .iframe-box {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 30px;
+  width:500px;
+  height:430px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.payment-card{
+    margin-right:20px;
+}
+.payment-card h2{
+    margin-top:-7px;
+}
+.payment-info{
+    border:2px solid rgb(223, 216, 216);
+    border-radius:15px;
+    padding:10px;
+    padding-left:30px;
+    margin-top:-5px;
+    margin-left:20px;
+    margin-right:20px;
+    
+}
+
+.payment-info p {
+  font-size: 14px;
+  margin: 10px 0;
+  padding-left:15px;
+}
+.agreements{
+    margin-top:25px;
+    margin-bottom:5px;
+}
+
+
+
+.payment-info .total {
+  color: #e53935;
+  font-weight: bold;
+}
+
+
+.iframe-box h3 {
+  font-size: 16px;
+  margin-bottom:15px;
+  margin-top:-5px;
+}
+
+.iframe-box iframe {
+  width: 100%;
+  height: 340px;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+}
+
+.pay-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 7px;
+  background-color: #31422e;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: 5px solid #31422e;
+  border-radius: 8px;
+  cursor: pointer;
+  
+}
+.pay-btn:hover{
+    background-color: white;
+    color:#31422e;;
+    border:5px solid #31422e;
+    box-shadow: 5px 5px 7px #31422e;
+    
+}
+
+
+footer {
+  width: 100%;
+  background-color: #1b3720;
+}
+
+#footer {
+  padding: 20px 100px;
+}
+
+#footer div {
+  margin: 30px 90px;
+  text-align: center;
+  display: inline-block;
+}
+
+ul{
+  list-style: none;
+}
+
+#footer a {
+  font-size:15px;
+  margin-top:-25px;
+  color:white;
+  line-height:35px;
+  opacity: 0.4;
+}
+
+#footer h3{
+  font-size:17px;
+  opacity: 0.7;
+  margin:0px 5px;
+  opacity: 0.7
+}
+            
+#footer a:hover{
+  opacity: 1.0;
+  color: white;
+}
+
+#footer p{
+  text-align: center;
+  color: rgb(80, 103, 87);
+  margin-top: 20px;
+  font-size: 10px;
+}
+  </style>
+</head>
+<body>
+  <header>      
+    <div class="header1">
+      <div class="header-left"><a href="main.html"><img src="흰색로고.png"><span>COMMA<br>HOUSE</span></a></div>
+      <div class="header-center">
+      <ul>
+        <li><a href="main.html">HOME</a></li>
+        <li><a href="search.html">SEARCH</a></li>
+        <li><a href="introduce.html">INTRODUCE</a></li>
+        <li><a href="question.html">QUESTION</a></li>
+      </ul>
+      </div>
+      <div class="header-right"><a href="mypage.html" class="mypage">MY PAGE</a></div>
+    </div>
+    <div class="header2"></div>
+  </header>
+
+  <div class = "container">
+    <section class = "left">
+      <h2> <a class = "arrow" href = "#"> ← </a> &nbsp; 예약 및 결제창 </h2>
+      <form>
+        <label> 이름 <sup> * </sup> </label>
+        <input type = "text" placeholder = "이름을 입력해 주세요." required> <br> <br>
+
+        <label>전화번호 <sup> * </sup> </label>
+        <input type="tel" placeholder="전화번호를 입력해 주세요." required> <br> <br>
+
+        <label> 이메일 <sup> * </sup> </label>
+        <input type="email" placeholder="이메일을 입력해 주세요." required> <br> <br> <br> <br> <hr>
+
+        <label class="other-label"> 할인 쿠폰 적용 </label>
+        <select>
+          <option value = ""> 쿠폰 선택 </option>
+          <option> 적용 안 함 </option>
+          <option> 국내숙소 10000원 할인쿠폰 </option>
+          <option> 부산여행 10000원 할인쿠폰 </option>
+          <option> 양양숙소 10000원 할인쿠폰 </option>
+        </select> <br> <br>
+
+        <div class = "payment-methods">
+          <button type = "button"><img src="toss.png" width="20px"><span><b>toss</b> pay</span></button>
+          <button type = "button"><img src="kakao.png" width="60px"></button>
+          <button type = "button"> 퀵 계좌이체 </button>
+          <button type = "button"> 신용/체크카드 </button>
+          <button type = "button"> <b style="color:#ff4d4f;">PAYCO</b> </button>
+          <button type = "button"><img src="naver.png" width="20px"><span><b>pay</b></span></button>
+          <button type = "button"> 휴대폰 결제 </button>
+          <button type = "button"><img src="kb.png" width="20px"><span><b>KB</b> Pay</span></button>
+          <button type = "button"> 무통장 입금 </a> </button>
+        </div>
+      </form>
+      <div> <br> <label> <input type = "checkbox"> 이 결제 수단을 다음에도 사용하기 </label> </div>
+      <div class = "payment-section">
+        <div class = "payment-card">
+          <h2>결제 정보 </h2>
+          <div class = "payment-info">
+            <p> <span class = "label"> 객실 가격 </span> 930,600원 </p>
+            <p> <span class = "label"> 쿠폰 할인 </span> -10,000원 </p>
+            <p class = "total"> <span class = "label"> 총 결제 금액 </span> 920,600원 </p>
+          </div>
+          <div class = "agreements">
+            <label> <input type = "checkbox"> 숙소 이용 규칙 및 규정 동의 (필수) </label> <br>
+            <label> <input type = "checkbox"> 개인정보 수집 동의 (필수) </label> <br>
+            <label> <input type = "checkbox"> 개인정보 제3자 제공 동의 (필수) </label>
+          </div>
+          <form action="결제확인.html">
+          <input type = "submit" onclick = "alert('결제화면으로 이동합니다.')" class = "pay-btn" value = "결제하기">
+          </form>
+        </div>
+        <div class = "iframe-box">
+          <h3> 숙박업소 이용약관 </h3>
+          <iframe src = "이용약관.html" title = "이용약관" frameborder = "0"> </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class = "right">
+      <article class = "article1">
+        <div class = "hotel-card">
+          <h3> 포시즌스 호텔 서울 </h3>
+          <img src = "포시즌스 호텔 서울/포시즌스1.png" alt = "파라나스호텔제주" class = "hotel-image">
+          <div class = "hotel-info">
+            <p> <span class = "label"> 객실 </span> 포시즌스 스위트 더블 룸</p>
+            <p> <span class = "label"> 일정 </span> 2025. 06. 12 - 2025. 06. 13 (1박) </p>
+            <p> <span class = "label"> 기준인원 </span> 기준 2인, 최대 2인 </p>
+            <p> <span class = "label"> 추가정보 </span> 조식 포함 </p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+  <footer>
+    <div id = "footer">
+      <div>
+        <a href = "#"> <h3> 쉼표하우스 </h3> </a>
+          <ul>
+            <li> <a href = "#"> 회사소개 </a> </li>
+            <li> <a href = "#"> 채용정보 </a> </li>
+            <li> <a href = "#"> 보도자료 </a> </li>
+            <li> <a href = "#"> 블로그 </a> </li>
+          </ul>
+      </div>
+      <div>
+        <a href = "#"> <h3> 고객지원 </h3> </a>
+          <ul>
+            <li> <a href = "#"> 도움말 </a> </li>
+            <li> <a href = "#"> 문의하기 </a> </li>
+            <li> <a href = "#"> 취소정책 </a> </li>
+            <li> <a href = "#"> 안전정보 </a> </li>
+          </ul>
+      </div>
+      <div>
+        <a href = "#"> <h3> 호스트 </h3> </a>
+          <ul>
+            <li> <a href = "#"> 숙소 등록하기 </a> </li>
+            <li> <a href = "#"> 호스트 가이드 </a> </li>
+            <li> <a href = "#"> 리소스 센터 </a> </li>
+            <li> <a href = "#"> 커뮤니티 </a> </li>
+          </ul>
+      </div>
+      <div>
+        <a href = "#"> <h3> 정책 </h3> </a>
+          <ul>
+            <li> <a href = "#"> 이용약관 </a> </li>
+            <li> <a href = "#"> 개인정보처리방침 </a> </li>
+            <li> <a href = "#"> 쿠키정책 </a> </li>
+            <li> <a href = "#"> 접근성 </a> </li>
+          </ul>
+      </div>
+      <p> &copy; 2024 쉼표하우스. All rights reserved. </p>
+    </div>
+  </footer>
+</body>
+</html>

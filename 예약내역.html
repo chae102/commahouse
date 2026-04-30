@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쉼표하우스 마이페이지 예약내역</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+
+        }
+        body{
+   
+        }
+        a{text-decoration: none; color:black;}
+        .header{
+            width:100%;
+            height:200px;
+            background-color: white;
+            border-bottom: 2px solid #d0d8cd;
+        }
+        .header>h1{
+            text-indent: 70px;
+            color:#001519;
+            position: relative;
+            top:120px;
+            font-size: 30px;
+            opacity: 0.8;
+        }
+
+        .re-big-box{
+            width: 70%;
+            position:relative;
+            left:5%;
+            top:50px;
+            
+        }
+        .re-big-box>p{
+            position: absolute;
+            top:-30px;
+            left:10px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0;
+        }
+        .re-box{
+            width:100%;
+            height:220px;
+            border-top:1px solid #7d7d7d;
+            background-color: white;
+        }
+        .re-box:last-child{
+            border-top:1px solid #7d7d7d;
+        }
+        .re-box-img{
+            width:40%;
+            height:220px;
+            float:left;
+            
+        }
+        .re-box-img>img{
+            width:90%;
+            height:86%;
+            position:relative;
+            top:7%;
+            left:5%;
+            border-radius: 12px;
+        }
+        .re-box-text{
+            width: 60%;
+            height:200px;
+            float:right;
+            position:relative;
+            top:4%;
+            left:3%;
+
+        }
+        .re-box-text>p{
+            line-height: 50px;
+            font-weight: 550;
+            color:rgb(171, 44, 44);
+        }
+        .re-box-text>h2{
+            font-size:22px;
+            color:#001519;
+        }
+        .re-box-text>span{
+            font-size: 14px;
+            line-height: 30px;
+            color:#555;
+        }
+        .re-box-text>button{
+            display:inline-block;
+            width:100px;
+            height:40px;
+            border-radius: 15px;
+            border:none;
+            background-color: #31422e;
+            color:white;
+            position:relative;
+            top:8%;
+            left:0%;
+            cursor:pointer;
+            padding:5px;
+            margin-right:5px;
+            box-shadow: 1px 1px 5px #a5b3a7;
+            transition:all 0.5s;
+            
+        }
+        .re-box-text>button:hover{
+            opacity: 0.8;
+            background-color: white;
+            color:#001519;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <div class="header">
+                <h1>예약내역</h1>
+            </div>
+            <div class="re-big-box">
+                <p>최근 예약 1건 / 취소 완료 2건 / 이용 완료 3건</p>
+                <div class="re-box">
+                    <div class="re-box-img">
+                        <img src="예약내역_파라나스.jpg" >
+                    </div>
+                    <div class="re-box-text">
+                        <p>예약완료</p>
+                        <h2>파라나스 호텔 제주</h2>
+                        <span>프리미어 패밀러 트윈 · 1박</span>
+                        <br>
+                        <button>예약취소</button>
+                        <button>예약상세</button>
+                    </div>
+                </div>
+                <div class="re-box">
+                    <div class="re-box-img">
+                        <img src="예약내역_그랜드조선.jpg" >
+                    </div>
+                    <div class="re-box-text">
+                        <p>예약취소</p>
+                        <h2>그랜드 조선 부산</h2>
+                        <span>슈페리어 시티 더블 · 2박</span>
+                        <br>
+                        <button>다시예약</button>
+                        <button>취소내역</button>
+                    </div>
+                </div>
+                <div class="re-box">
+                    <div class="re-box-img">
+                        <img src="예약내역_노보텔.jpg" >
+                    </div>
+                    <div class="re-box-text">
+                        <p>이용완료</p>
+                        <h2>노보텔 스위트 앰버서더 서울 용산</h2>
+                        <span>주니어 스위트 · 1박</span>
+                        <br>
+                        <button>다시예약</button>
+                        <button>예약상세</button>
+                    </div>
+                </div>
+                <div class="re-box">
+                    <div class="re-box-img">
+                        <img src="예약내역_카세로지.jpg" >
+                    </div>
+                    <div class="re-box-text">
+                        <p>이용완료</p>
+                        <h2>카세로지 호텔</h2>
+                        <span>가든 스파 스위트 · 2박</span>
+                        <br>
+                        <button>다시예약</button>
+                        <button>예약상세</button>
+                    </div>
+                </div>
+                <div class="re-box">
+                    <div class="re-box-img">
+                        <img src="예약내역_스카이베이.jpg" >
+                    </div>
+                    <div class="re-box-text">
+                        <p>예약취소</p>
+                        <h2>스카이베이호텔 경포</h2>
+                        <span>이그제큐티브 더블(오션뷰) · 1박</span>
+                        <br>
+                        <button>다시예약</button>
+                        <button>취소내역</button>
+                    </div>
+                </div>
+                <div class="re-box">
+                    <div class="re-box-img">
+                        <img src="예약내역_세인트존스.jpg" >
+                    </div>
+                    <div class="re-box-text">
+                        <p>이용완료</p>
+                        <h2>세인트존스 호텔</h2>
+                        <span>슈페리어 헐리우드(노오션뷰) · 1박</span>
+                        <br>
+                        <button>다시예약</button>
+                        <button>예약상세</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+</body>
+</html>

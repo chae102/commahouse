@@ -1,0 +1,206 @@
+*{
+      padding:0px;
+       margin:0px;
+       box-sizing:border-box;
+       font-family: 'Arial', sans-serif;
+    }
+    body{
+        background-color:rgb(244, 241, 237);
+        }
+            
+    a{
+        text-decoration:none;
+    }
+    .header{
+                
+        width:100%;
+        position:fixed;
+        height:70px;
+        z-index:1000;
+        background-color: #31422e;
+                
+    }
+    .header2{
+                
+         width:100%;
+        height:70px;
+         display:hidden;
+    }
+    .left{
+        display:inline-block;
+        position: relative;
+        left:40px;
+    }
+            
+    .logo-img{
+                
+        width:35px;
+        height:40px;
+        position:relative;
+        top:13px;
+        margin-right:3px;
+                
+                
+    }
+    .logo-text{
+        display:inline-block;
+        font-size: 17px;
+        font-weight: 550;
+        position: relative;
+        text-align:center;
+        top:10px;
+        letter-spacing:3px;
+        color:white;
+                
+
+    }
+    .logo-text span{
+        letter-spacing: 2px;
+    }
+            
+            
+    .right{
+        display:inline-block;
+        position:absolute;
+        right:5%;
+        top:25%;
+        font-size:14px;
+        border:1.5px solid white;
+        border-radius: 20px;
+        width:110px;
+        line-height: 30px;
+        text-align: center;
+        letter-spacing:2px;
+                
+        }
+    .right{
+        color:white;
+        transform: all 0.5s;
+    }
+    .right:hover{
+         background-color: white;
+        color:  #3a5236;
+                
+    }
+            
+    .nav{
+        position:relative;
+        line-height:50px;
+        text-align: center;
+        border-bottom:1px solid black;
+    }
+    .nav li{
+        display:inline-block;
+        margin:0px 50px;
+                
+    }
+    .nav li a{
+        color:#1f1f1f;
+    }
+    .nav li a:hover{
+        text-decoration: underline 1.5px #1f1f1f;;
+    }
+
+    
+
+    /* 공통 container (객실 섹션) */
+    
+    .container {
+      width: 80%;
+      margin: 40px 140px;
+      padding: 30px 40px;
+      border-radius: 12px;
+      background-color: white;
+      box-shadow: 2px 2px 10px #333;
+    }
+
+    /* 상단 메인 이미지 + 썸네일 갤러리 */
+    
+    .image-gallery {
+      height: 530px;
+      
+    }
+    .large {
+      width: 50%;
+      
+    }
+    .large img {
+      float:left;
+      width: 100%;
+      height: 510px;
+      border-radius: 12px 0px 0px 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+#simg2 {
+    float:right;
+    border-radius: 0px 12px 0px 0px;
+    
+    
+}
+#simg3{
+  margin-top:5px;
+}
+#simg4 {
+  float:right;
+  border-radius: 0px 0px 12px 0px;
+  margin-top:5px;
+}
+
+
+    .large img:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .thumbnails {
+      width: 50%;
+      display:inline-block;
+      
+    }
+    .thumbnails img {
+      width: 50%;
+      height: 250px;
+      padding-left:9px;
+    }
+
+    /* 숙소 이름, 위치, 별점 */
+    #main-photo h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #222;
+      
+    }
+
+    #main-photo h2 {
+      margin: 0;
+      font-size: 16px;
+      color: #666;
+      
+    }
+
+    
+    .info p {
+      
+      font-size: 16px;
+      color: #666;
+    }
+    .stars {
+      font-size: 18px;
+      color: #f5d623;
+      font-weight: 700;
+      
+      
+    }
+    .tax{
+      font-weight: 700;
+      font-size:30px;
+      position:absolute;
+      right:200px;
+      bottom:-50px;
+      
+    }
+
+
+   
+   
+    

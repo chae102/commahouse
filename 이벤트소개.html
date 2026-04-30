@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>쉼표하우스 | 숙소 이벤트</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #ffffff;
+      color: #333;
+    }
+    header {
+      background: #5B8C5A;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #e8f5e9;
+      padding: 10px 0;
+    }
+    .tabs button {
+      background: none;
+      border: none;
+      color: #5B8C5A;
+      font-weight: bold;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .tabs button.active {
+      border-bottom: 3px solid #5B8C5A;
+    }
+    section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    h2 {
+      color: #5B8C5A;
+      border-left: 5px solid #a5d6a7;
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+    .card-grid {
+      align-content: start;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); align-items: stretch;
+      gap: 20px;
+    }
+    .card {
+      box-sizing: border-box;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      min-height: 160px;
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #1b5e20;
+    }
+    .card p {
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    .card .date {
+      font-size: 13px;
+      color: #888;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    section {
+      padding: 60px 0;
+    }
+    .card-grid {
+      gap: 32px;
+    }
+    .logo {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="쉼표하우스 로고" class="logo" style="width: 60px; margin-bottom: 10px;">
+    <h1>쉼표하우스 숙소 이벤트</h1>
+</header>
+
+<div class="tabs">
+  <button class="tab-btn" data-target="hotel">호텔</button>
+  <button class="tab-btn" data-target="motel">모텔</button>
+  <button class="tab-btn" data-target="pension">펜션</button>
+  <button class="tab-btn" data-target="resort">리조트</button>
+</div>
+
+<section id="hotel" class="active"><h2>호텔 이벤트</h2><div class="card-grid">
+    <div class="card"><h3>이벤트</h3><p>럭셔리 호텔 최대 3만원 할인</p><p class="date">2025.06.01 ~ 06.30</p></div>
+    <div class="card"><h3>이벤트</h3><p>서울 인기 호텔 특가전</p><p class="date">2025.06.10 ~ 07.10</p></div>
+    <div class="card"><h3>이벤트</h3><p>신규 호텔 예약 시 쿠폰 제공</p><p class="date">2025.06.05 ~ 06.20</p></div>
+    <div class="card"><h3>이벤트</h3><p>리뷰 높은 호텔 TOP 10</p><p class="date">상시진행</p></div>
+    <div class="card"><h3>이벤트</h3><p>주말 숙박 최대 50% 할인</p><p class="date">2025.06.07 ~ 06.08</p></div>
+    <div class="card"><h3>이벤트</h3><p>호텔 얼리버드 2만원 할인</p><p class="date">2025.06.01 ~ 06.15</p></div>
+</div></section>
+
+<section id="motel"><h2>모텔 이벤트</h2><div class="card-grid">
+    <div class="card"><h3>이벤트</h3><p>금요일 1만원 쿠폰 지급</p><p class="date">2025.06.01 ~ 06.30</p></div>
+    <div class="card"><h3>이벤트</h3><p>늦은 체크아웃 무료 제공</p><p class="date">상시진행</p></div>
+    <div class="card"><h3>이벤트</h3><p>테마 모텔 최대 40% 할인</p><p class="date">2025.06.10 ~ 06.25</p></div>
+    <div class="card"><h3>이벤트</h3><p>이벤트 참여 시 커피쿠폰</p><p class="date">2025.06.01 ~ 06.10</p></div>
+    <div class="card"><h3>이벤트</h3><p>스페셜 테마룸 특가전</p><p class="date">2025.06.15 ~ 07.01</p></div>
+    <div class="card"><h3>이벤트</h3><p>모텔 숙박권 추첨 이벤트</p><p class="date">2025.06.05 ~ 06.30</p></div>
+</div></section>
+
+<section id="pension"><h2>펜션 이벤트</h2><div class="card-grid">
+    <div class="card"><h3>이벤트</h3><p>여름 성수기 얼리버드 특가</p><p class="date">2025.06.01 ~ 07.15</p></div>
+    <div class="card"><h3>이벤트</h3><p>바비큐 제공 펜션 특집</p><p class="date">2025.06.10 ~ 07.10</p></div>
+    <div class="card"><h3>이벤트</h3><p>반려견 동반 가능 펜션 모음</p><p class="date">상시진행</p></div>
+    <div class="card"><h3>이벤트</h3><p>전국 감성 뷰 펜션 할인</p><p class="date">2025.06.05 ~ 06.30</p></div>
+    <div class="card"><h3>이벤트</h3><p>바다 근처 펜션 베스트</p><p class="date">2025.06.01 ~ 06.20</p></div>
+    <div class="card"><h3>이벤트</h3><p>풀빌라 포함 펜션 특가전</p><p class="date">2025.06.10 ~ 07.05</p></div>
+</div></section>
+
+<section id="resort"><h2>리조트 이벤트</h2><div class="card-grid">
+    <div class="card"><h3>이벤트</h3><p>리조트 숙박 + 워터파크 패키지</p><p class="date">2025.06.15 ~ 07.15</p></div>
+    <div class="card"><h3>이벤트</h3><p>해운대 오션뷰 리조트 할인</p><p class="date">2025.06.01 ~ 06.20</p></div>
+    <div class="card"><h3>이벤트</h3><p>제주 인기 리조트 특가전</p><p class="date">2025.06.10 ~ 07.10</p></div>
+    <div class="card"><h3>이벤트</h3><p>주중 리조트 조식 포함 프로모션</p><p class="date">2025.06.01 ~ 06.30</p></div>
+    <div class="card"><h3>이벤트</h3><p>전국 리조트 연박 할인 이벤트</p><p class="date">2025.06.05 ~ 06.25</p></div>
+    <div class="card"><h3>이벤트</h3><p>가족 리조트 숙박 혜택</p><p class="date">2025.06.12 ~ 07.01</p></div>
+</div></section>
+
+<script>
+  const buttons = document.querySelectorAll(".tab-btn");
+  const sections = document.querySelectorAll("section");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const target = btn.dataset.target;
+      sections.forEach(sec => {
+        if (target === "all") {
+          sec.classList.remove("active");
+          document.getElementById("all").classList.add("active");
+        } else {
+          sec.classList.remove("active");
+          if (sec.id === target) sec.classList.add("active");
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

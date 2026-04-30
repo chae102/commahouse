@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+SA+Hand:wght@400..700&family=Gowun+Dodum&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+    <style>
+            *{
+                padding:0px; /*마진리셋*/
+                margin:0px; /*패딩리셋*/
+                box-sizing:border-box; /*박스영역은은 테두리까지*/
+                letter-spacing: 2px;
+                
+            }
+            #container {
+            margin:0 auto;  /* 화면 중앙에 배치 */
+            width:100%;    /* 너비 */
+            }
+            a{
+                text-decoration:none; /*링크 밑줄 없애고 색 블랙*/
+                color:#1f1f1f;
+            }
+            *{
+                padding:0px; 
+                margin:0px; 
+                box-sizing:border-box; 
+                letter-spacing: 2px;
+            }
+            body{
+              background-color: #f7f4eb;
+              
+            }
+            a{
+                text-decoration:none;
+                color:#1f1f1f;
+            }
+            /*헤더*/
+
+
+            .header1{
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;
+                height: 60px;
+                z-index: 100;
+                background-color: #31422e;
+                
+            }
+            .header2{
+              width: 100%;
+              height: 250px;
+              text-align: center;
+              
+            }
+            .header1 a{
+              color:white;
+              letter-spacing: 5px;
+            }
+            ul{
+                list-style: none;
+            }
+            .header-left{
+              width:20%;
+              height:60px;
+              float:left;
+            }
+            .header-left>a>img{
+              width:25px;
+              height:35px;
+              margin-left:30px;
+              margin-top:12px;
+            }
+            .header-left>a>span{
+              display:inline-block;
+              font-size: 15px;
+              margin-left:10px;
+              font-weight: 800;
+              letter-spacing: 5px;
+              text-align: justify;
+            }
+            .header-center{
+              width:60%;
+              text-align: center;
+              float:left;
+              margin-top:16px;
+              
+            }
+            .header-center>ul>li{
+              display:inline-block;
+              width:20%;
+              font-size: 15px;
+            }
+            .header-right{
+              width:10%;
+              float:right;
+              margin-top:16px;
+            }
+            .header-right a{
+              border-radius: 18px;
+              border:2px solid white;
+              padding:5px 15px;
+              font-size: 14px;
+              letter-spacing: 3px;
+            }
+            .header-center a:hover{
+              text-decoration: underline;
+            }
+            .header-right a:hover{
+              color:#31422e;
+              background-color: white;
+            }
+
+            
+            
+
+            
+            .logo-img{
+                position:relative;
+                top:122px;
+                
+            }
+            .logo-text{
+                font-family: "Playfair Display", serif;
+                font-size: 90px;
+                font-weight: 600;
+                z-index: 50;
+                color:#31422e;
+                
+            }
+            .logo-c{
+                position:relative;
+                margin:0px 15px;
+                top:120px;
+            }
+            .logo-o{
+                position:relative;
+                margin:0px 15px;
+                top:91px;
+            }
+            .logo-m1{
+                position:relative;
+                margin:0px 15px;
+                top:120px;
+            }
+            .logo-m2{
+                position:relative;
+                margin:0px 15px;
+                top:91px;
+            }
+            .logo-a{
+                position:relative;
+                margin:0px 15px;
+                top:120px;
+            }
+            
+            
+          
+            
+                
+
+            
+            .video-box{
+                clear: both;
+                width:100%;
+                height:870px;
+
+            }
+            
+
+            .video{
+                width:100%;
+            }
+            .search{
+                z-index:100;
+                position:relative;
+                top:-470px;
+                text-align:center;
+                
+            }
+            .search h3{
+                font-family: "Gowun Dodum", sans-serif;
+                font-size:35px;
+                color:rgb(244, 241, 237);
+                text-shadow:5px 5px 4px #31422e;
+                font-family: 'Malgun Gothic', Arial, sans-serif;
+                margin-bottom:10px;
+                font-weight:600;
+                opacity: 0.7;
+
+            }
+            .comment{
+                
+                font-size:15px;
+                color:hsl(28, 58%, 91%);
+                font-family:'Malgun Gothic', Arial, sans-serif;
+                
+                opacity: 0.6;
+                
+            }
+            .search-box{
+                background-color:white;
+                border-radius:40px;
+                width:55%;
+                height:75px;
+                position:absolute;
+                left:23%;
+                text-align: center;
+                opacity: 0.9;
+                margin-top:60px;
+            }
+            .search-box input{
+                border-style:none;
+                text-align: center;
+                width:150px;
+                border-radius:10px;
+                
+            }
+            .search-box input:hover{
+                background-color:rgb(203, 244, 230);
+                opacity: 1.0;
+            }
+            .search-box input:focus{
+                height:30px;
+                opacity: 1.0;
+            
+            }
+            
+            .search-box2{
+                display:inline-block;
+                margin:10px 0px;
+                padding-right:10px;
+                padding-left:5px;
+                border-right:1px solid gray;
+
+            }
+            .search-item{
+                margin:2px;
+                display:inline-block;
+                padding:7px 10px;
+                transition: all 0.5s;
+                
+            }
+            .search-item:hover{
+                transform: scale(1.2,1.2);
+            }
+
+
+            /*인기여행지*/
+            .best-big-box{
+                clear: both;
+                
+                width:100%;
+                padding-top:100px;
+                padding-left: 20px;
+                height:600px;
+                
+            }
+            .best-big-box h1{
+                margin-left:-40px;
+                margin-bottom:40px;
+                font-size:35px;
+                text-transform:capitalize;
+                display: inline-block;
+                text-indent: 50px;
+                color:#001519;
+            }
+            
+            .best-box{
+                width:200px;
+                height:310px;
+                display:inline-block;
+                margin-left:20px;
+                font-size:20px;
+                font-family: "Playfair Display", serif;
+                z-index: 0;
+                position: relative;
+                
+            }
+            .best-box>a>p{
+                width:100%;
+                font-size:27px;
+                position: absolute;
+                bottom:140px;
+                text-align: center;
+                color:#fcfbfb;
+                opacity: 0.7;
+                text-transform: uppercase;
+                cursor: pointer;
+                text-shadow: 2px 2px 5px #101010;
+            }
+            .jeju{
+                width: 200px;
+                height: 310px;
+                border-radius: 18px;
+                background-image: url('제주.png');
+                background-size: cover;
+                background-position: center;
+                transition: background-image 0.3s ease;
+                box-shadow: 2px 2px 10px #999;
+
+            }
+            .jeju:hover{
+                background-image: url('제주1.png');
+                transform: scale(1.05,1.05);
+                transition: all 0.5s;
+                box-shadow: 0 4px 15px rgb(105, 96, 96);
+                animation-name: opa;
+                animation-duration: 0.5s;
+            }
+            .seoul{
+                width: 200px;
+                height: 310px;
+                border-radius: 18px;
+                background-image: url('서울.png');
+                background-size: cover;
+                background-position: center;
+                transition: background-image 0.3s ease;
+                box-shadow: 2px 2px 10px #999;
+            }
+            .seoul:hover{
+                background-image: url('서울1.png');
+                transform: scale(1.05,1.05);
+                transition: all 0.5s;
+                box-shadow: 0 4px 15px rgb(105, 96, 96);
+                animation-name: opa;
+                animation-duration: 0.5s;
+            }
+            .busan{
+                width: 200px;
+                height: 310px;
+                border-radius: 18px;
+                background-image: url('부산.png');
+                background-size: cover;
+                background-position: center;
+                transition: background-image 0.3s ease;
+                box-shadow: 2px 2px 10px #999;
+            }
+            .busan:hover{
+                background-image: url('부산1.png');
+                transform: scale(1.05,1.05);
+                transition: all 0.5s;
+                box-shadow: 0 4px 15px rgb(105, 96, 96);
+                animation-name: opa;
+                animation-duration: 0.5s;
+            }
+            .gangnueng{
+                width: 200px;
+                height: 310px;
+                border-radius: 18px;
+                background-image: url('강릉.png');
+                background-size: cover;
+                background-position: center;
+                transition: background-image 0.3s ease;
+                box-shadow: 2px 2px 10px #999;
+            }
+            .gangnueng:hover{
+                background-image: url('강릉1.png');
+                transform: scale(1.05,1.05);
+                transition: all 0.5s;
+                box-shadow: 0 4px 15px rgb(105, 96, 96);
+                animation-name: opa;
+                animation-duration: 0.5s;
+            }
+            .gyeongju{
+                width: 200px;
+                height: 310px;
+                border-radius: 18px;
+                background-image: url('경주.png');
+                background-size: cover;
+                background-position: center;
+                transition: background-image 0.3s ease;
+                box-shadow: 2px 2px 10px #999;
+                
+            }
+            .gyeongju:hover{
+                background-image: url('경주1.png');
+                transform: scale(1.05,1.05);
+                transition: all 0.5s;
+                box-shadow: 0 4px 15px rgb(105, 96, 96);
+                animation-name: opa;
+                animation-duration: 0.5s;
+
+            }
+            .damyang{
+                width: 200px;
+                height: 310px;
+                border-radius: 18px;
+                background-image: url('담양1.jpg');
+                background-size: cover;
+                background-position: center;
+                transition: background-image 0.3s ease;
+                box-shadow: 2px 2px 10px #999;
+            }
+            .damyang:hover{
+                background-image: url('담양2.jpg');
+                transform: scale(1.05,1.05);
+                transition: all 0.5s;
+                box-shadow: 0 4px 15px rgb(105, 96, 96);
+                animation-name: opa;
+                animation-duration: 0.5s;
+            }
+
+            
+
+            /*인기호텔*/
+            .best-hotel-box{
+                clear: both;
+                width:100%;
+                height: 899px;
+                background-color: #31422e;
+                padding:70px 10px;
+                position: relative;
+            }
+            .best-hotel-box img{
+                border-radius: 18px;
+                width:100%;
+                height:100%;
+            }
+            .best-text{
+                width:17%;
+                height:759px;
+                color:white;
+                text-transform: uppercase;
+                font-size: 40px;
+                float:left;
+                padding-left:5px;
+                text-shadow: 2px 2px 6px rgb(16, 16, 16);
+                
+                
+                
+            }
+            .top-box-1{
+                width:37%;
+                height: 749px;
+                float:left;
+                border-radius: 18px;
+                position: relative;
+                background-color: white;
+                top:5px;
+                box-shadow: 1px 1px 10px #d6d8d5;
+                box-shadow: 4px 4px 6px rgb(16, 16, 16);
+            }
+            .top-box-2{
+                width:42%;
+                height:243px;
+                float:right;
+                border-radius: 18px;
+                position: relative;
+                background-color: white;
+                top:3px;
+                right:2%;
+                box-shadow: 1px 1px 10px #d6d8d5;
+                box-shadow: 4px 4px 6px rgb(16, 16, 16);
+            }
+            .top-box-3{
+                width:42%;
+                height:243px;
+                float:right;
+                border-radius: 18px;
+                position: relative;
+                top:13px;
+                right:2%;
+                background-color: white;
+                box-shadow: 1px 1px 10px #d6d8d5;
+                box-shadow: 4px 4px 6px rgb(16, 16, 16);
+            }
+            .top-box-4{
+               
+                width:42%;
+                height:243px;
+                float:right;
+                border-radius: 18px;
+                position: relative;
+                top:24px;
+                right:2%;
+                background-color: white;
+                box-shadow: 1px 1px 10px #d6d8d5;
+                box-shadow: 4px 4px 6px rgb(16, 16, 16);
+            }
+            .best-img-1{
+                width:96%;
+                height:350px;
+                position:relative;
+                left:2%;
+                top:10px;
+            
+            }
+            .best-img-2{
+                width:35%;
+                height:223px;
+                position:relative;
+                left:2%;
+                top:10px;
+            }
+            .best-img-3{
+                width:35%;
+                height:223px;
+                position:relative;
+                left:2%;
+                top:10px;
+            }
+            .best-img-4{
+                width:35%;
+                height:223px;
+                position:relative;
+                left:2%;
+                top:10px;
+            }
+            .best-img-text{
+                clear: both;
+                width:100%;
+                height:399px;
+                padding-top:15px;
+                padding-left:10px;
+            }
+            .best-img-text2{
+                clear: both;
+                float:right;
+                width:60%;
+                height:213px;
+                position:absolute;
+                top:20px;
+                left:39%;
+
+            }
+
+            .best-img-text h3{
+                font-size:25px;
+                padding-bottom:12px;
+                padding-top: 5px;
+                padding-left: 5px;
+            }
+            .best-img-text p{
+                text-indent: 7px;
+                line-height: 25px;
+                letter-spacing: 4px;
+                color:#555;
+                font-size: 15px;
+            }
+            .best-img-text .tax{
+                position:absolute;
+                right:20px;
+                bottom:65px;
+                font-size:20px;
+                font-weight: 550;
+                text-decoration: line-through;
+                font-style: italic;
+                
+            }
+            .best-img-text .tax2{
+                position:absolute;
+                right:20px;
+                bottom:40px;
+                font-size:25px;
+                font-weight: 650;
+                color:rgb(156, 21, 21);
+            }
+
+            .best-img-text2 h3{
+                font-size:20px;
+                margin-bottom:12px;
+            }
+            .best-img-text2 p{
+                text-indent: 5px;
+                line-height: 25px;
+                letter-spacing: 2px;
+                color:#555;
+                font-size: 13px;
+            }
+            .best-img-text2 .tax{
+                position:absolute;
+                right:20px;
+                bottom:35px;
+                font-size:15px;
+                font-weight: 550;
+                text-decoration: line-through;
+                font-style: italic;
+                
+            }
+            .best-img-text2 .tax2{
+                position:absolute;
+                right:20px;
+                bottom:10px;
+                font-size:19px;
+                font-weight: 650;
+                color:rgb(156, 21, 21);
+                
+            }
+            
+            .top-box-1:hover{
+                
+                transform: translate(-1px,-5px);
+                transition: all 0.5s;
+                box-shadow: 1px 1px 10px #d6d8d5;
+                animation: opa 0.5s;
+            }
+            .top-box-2:hover{
+
+                transform: translate(-1px,-5px);
+                transition: all 0.5s;
+                box-shadow: 1px 1px 10px #d6d8d5;
+                animation: opa 0.5s;
+            }
+            .top-box-3:hover{
+
+                transform: translate(-1px,-5px);
+                transition: all 0.5s;
+                box-shadow: 1px 1px 10px #d6d8d5;
+                animation: opa 0.5s;
+
+            }
+            .top-box-4:hover{
+                
+                transform: translate(-1px,-5px);
+                transition: all 0.5s;
+                box-shadow: 1px 1px 10px #d6d8d5;
+                animation: opa 0.5s;
+            }
+            
+
+            /*이벤트*/
+            
+            .event-box{
+                clear: both;
+                width: 100%;
+                height:350px;
+                position: relative;
+                padding-top:70px;
+                
+            }
+            .event-box>button{
+                position:absolute;
+                top:145px;
+                height:40px;
+                width:30px;
+                border:none;
+                background-color: transparent;
+                color:black;
+                font-size: 24px;
+                opacity:0.5;
+                z-index: 10;
+            }
+            .prev{
+                left:0px;
+    
+            }
+            .next{
+                right:0px;
+            }
+            .event-box>button:hover{
+                background-color: #222;
+                color:#fff;
+                opacity: 0.6;
+                cursor:pointer;
+            }
+            .event{
+                width: 100%;
+                height:200px;
+                display: none;
+
+            }
+            .event1,.event2{
+                float:left;
+                width:30%;
+                position:relative;
+                left:3%;
+                height: 200px;
+                background-color: white;
+                border-radius: 18px;
+                margin-right:2%;
+                box-shadow: -1px 1px 2px #b0afaf;
+                overflow: hidden;
+                transition: all 0.5s;
+                
+            }
+            .event1 h2{
+                width:100%;
+                font-size:30px;
+                text-transform: uppercase;
+                position:absolute;
+                text-align: center;
+                top:10%
+
+            }
+            .event1 p{
+                position:absolute;
+                width:100%;
+                text-align: center;
+                top:35%;
+                font-size: 14px;
+                letter-spacing: 0px;
+            }
+            .event1 input{
+                padding:15px 25px;
+                background-color: #31422e;
+                color:white;
+                position:absolute;
+                border:none;
+                border-radius: 12px;
+                box-shadow: 2px 2px 5px rgb(130, 148, 129);
+                cursor: pointer;
+                font-size: 17px;
+                font-weight: 600;
+            }
+            .event1 input:hover{
+                background-color: white;
+                color:#31422e;
+                border:2px solid #31422e;
+            }
+            .bt1{
+                left:20%;
+                top:60%;
+            }
+            .bt2{
+                left:50%;
+                top:60%;
+            }
+            
+            .event2>h2{
+                position: absolute;
+                width:60%;
+                left:5%;
+                line-height: 45px;
+                top:32%;
+                font-size: 26px;
+            }
+            .event2>p{
+                position: absolute;
+                width:60%;
+                left:4%;
+                top:13%;
+                font-size: 16px;
+            }
+            .event2>img{
+                width:170px;
+                height:170px;
+                border-radius: 50%;
+                position:absolute;
+                right:20px;
+                font-weight: 600;
+                bottom:15px;
+                
+            }
+            .event1:hover,.event2:hover{
+                transform: scale(1.04,1.04);
+                box-shadow: -2px 2px 10px #b0afaf;
+            }
+
+            /*관광명소*/
+            .tour{
+                width:100%;
+                height:900px;
+                
+            }
+            .tour-big-box{
+                clear: both;
+                width: 90%;
+                height:px;
+                top:70px;
+                position: relative;
+                left:5%;
+                
+            }
+            .tour-big-box>h2{
+                font-size: 25px;
+                padding-bottom:20px;
+                padding-left: 30px;
+            }
+            
+            .tour-box{
+                width:23%;
+                height:660px;
+                float:left;
+                position:relative;
+                margin-left:1.6%;
+                border-radius: 5px;
+            }
+            .tour-box img{
+                width:100%;
+                height:100%;
+                border-radius: 5px;
+            }
+
+            #tour-box1>a>.mini-1>.tour-img{
+                width:100%;
+                height:330px;
+            }
+            #tour-box2>a>.mini-1>.tour-img{
+                width:100%;
+                height:390px;
+            }
+            #tour-box3>a>.mini-1>.tour-img{
+                width:100%;
+                height:330px;
+            }
+            #tour-box4>a>.mini-1>.tour-img{
+                width:100%;
+                height:270px;
+            }
+
+            #tour-box1>a>.mini-2>.tour-img{
+                width:100%;
+                height:330px;
+            }
+            #tour-box2>a>.mini-2>.tour-img{
+                width:100%;
+                height:270px;
+            }
+            #tour-box3>a>.mini-2>.tour-img{
+                width:100%;
+                height:330px;
+            }
+            #tour-box4>a>.mini-2>.tour-img{
+                width:100%;
+                height:390px;
+            }
+            .tour-box>a:hover>.mini-2{
+                transform: scale(1.05,1.05);
+                 z-index: 10;
+                 animation: opa 0.5s;
+                 box-shadow: -2px 2px 10px #b0afaf;
+            }
+            .tour-box>a:hover>.mini-1{
+                transform: scale(1.05,1.05);
+                 z-index: 10;
+                 animation: opa 0.5s;
+                 box-shadow: -2px 2px 10px #b0afaf;
+            }
+            .mini-1,.mini-2{
+                transition: all 0.5s;
+                position: relative;
+                border-radius: 5px;
+                overflow: hidden;
+                /*ani*/
+                
+            }
+            
+            .mini-2{
+                position: relative;
+                top:50px;
+            }
+
+            .tour-text{
+                width:100%;
+                padding-top:5px;
+                
+                height:70px;
+                background-color: white;
+                text-align: center;
+                position: absolute;
+                bottom: 0;
+                
+            }
+            .mini-2 .tour-text{
+                top:0;
+            }
+            .mini-2 .tour-text>span{
+                position:relative;
+                top:32px;
+            }
+            .mini-2 .tour-text>h3{
+                position: relative;
+                bottom:16px;
+            }
+            .tour-text>span{
+                font-size: 12px;
+                color:gray;
+                letter-spacing: 0px;
+            }
+            .tour-text>h3{
+                font-size: 18px;
+                font-weight: 600;
+            
+            }
+
+
+            .sale{
+                clear: both;
+                width:100%;
+                height:520px;
+                padding-top: 70px;
+                background-color: #e7f0e5;
+            }
+            .sale>div{
+                width:90%;
+                height:380px;
+                position:relative;
+                left:5%;
+                box-shadow: 1px 1px 3px #999;
+                overflow: hidden;
+                border-radius: 30px;
+                
+            }
+            .sale1{
+                width:35%;
+                height:380px;
+                float:left;
+                position:relative;
+                border-radius: 30px 0px 0px 30px;
+            }
+            .sale2{
+                width:65%;
+                height:380px;
+                top:0;
+                float:right;
+                background-color: white;
+            }
+            .sale1>div{
+                width:100%;
+                height:380px;
+                
+                overflow: hidden;
+            }
+            .sale2>a>div{
+                width:32%;
+                height:380px;
+                float: left;
+                left:2%;
+                position:relative;
+                border-radius: 15px;
+            }
+            .sale2>a>div>div{
+                width:90%;
+                height:270px;
+                position: relative;
+                left:5%;
+                top:20px;
+                border-radius: 30px;
+                overflow: hidden;
+                
+            }
+            .sale img{
+                width:100%;
+                height:100%;
+            }
+            .sale1>h3{
+                position: absolute;
+                width:100%;
+                text-align: center;
+                font-size: 28px;
+                top:15%;
+                color:white;
+                opacity: 0.7;
+            }
+            .sale2>a>div>h3{
+                width:90%;
+                font-size: 17px;
+                position:absolute;
+                bottom:15%;
+                left:10%;
+                font-weight: 500;
+                letter-spacing: 0px;
+            }
+            .sale2>a>div>p{
+                width:90%;
+                position:absolute;
+                bottom:7%;
+                left:5%;
+                font-size: 18px;
+                font-weight: 700;
+                text-align: left;
+                padding: 0px 25px;
+                letter-spacing: 0px;
+                
+            }
+            .sale2>a>div>p>span{
+                color:red;
+                padding-right:10px;
+
+            }
+            .sale2>a:hover>div{
+                
+                background-color: #31422e;
+                color:white;
+                animation: opa 0.3s;
+            }
+            
+
+            
+            
+
+
+
+footer{
+    
+      margin:0;
+      padding:0;
+      display: block;
+      width:100%;
+      height:600px;
+      color:white;
+      background-color: #222;
+      overflow: hidden;
+    }
+    footer a{
+      color:white;
+    }
+    .foot-top{
+      width:100%;
+      height:350px;
+      text-align: center;
+      background-color: white;
+      padding-top:30px;
+      color:#31422e;
+      
+    }
+    .foot-top>h2{
+      font-size: 50px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+    .foot-top>p{
+      font-size: 13px;
+      margin-bottom: 60px;
+    }
+    .foot-top a{
+      display: block;
+      width:20%;
+      height:70px;
+      background-color: #31422e;
+      border-radius: 30px;
+      position: relative;
+      left:40%;
+      line-height: 70px;
+    }
+    .foot-left{
+      width:52%;
+      height:250px;
+      float:left;
+      background-color: #31422e;
+      padding:60px 20px;
+      line-height: 20px;
+      
+    }
+    .foot-left>div{
+      width:20%;
+      height:250px;
+      float:left;
+      position: relative;
+    }
+    .foot-left>div>img{
+      width:50px;
+      height:65px;
+      position: absolute;
+      left:40px;
+      top:10px;
+    }
+    .foot-left>p{
+      display: block;
+      width:80%;
+      height:250px;
+      font-size:12px;
+      float:left;
+      opacity: 0.8;
+    }
+    .foot-center{
+      width:18%;
+      height:250px;
+      float:left;
+      background-color: #31422e;
+      padding:20px 10px;
+      font-size: 14px;
+      line-height: 30px;
+      
+    }
+    .foot-center>h3{
+      line-height: 50px;
+      font-size: 15px;
+      opacity: 0.8;
+    }
+    .foot-right{
+      width:30%;
+      height:250px;
+      float:right;
+      background-color: #31422e;
+      padding:20px 10px;
+      font-size: 14px;
+      line-height: 25px;
+     
+    }
+    .foot-right>h3{
+      line-height: 50px;
+      font-size: 15px;
+      opacity: 0.8;
+    }
+    .foot-right a, .foot-center a{
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    @keyframes opa{
+                
+                0%{
+                    opacity: 0.6;
+                }
+                50%{
+                    opacity: 0.8;
+                }
+                100%{
+                    opacity: 1.0;
+                }
+            }
+
+
+    </style>
+</head>
+<body>
+     
+    <div id="container">
+
+        <header>      
+    <div class="header1">
+      <div class="header-left"><a href="main.html"><img src="흰색로고.png"><span>COMMA<br>HOUSE</span></a></div>
+      <div class="header-center">
+      <ul>
+        <li><a href="main.html">HOME</a></li>
+        <li><a href="search.html">SEARCH</a></li>
+        <li><a href="introduce.html">INTRODUCE</a></li>
+        <li><a href="question.html">QUESTION</a></li>
+      </ul>
+      </div><!--마이페이지 로그인 ? 로그인 후 마이페이지-->
+      <div class="header-right"><a href="mypage.html" class="mypage">MY PAGE</a></div>
+    </div>
+    <div class="header2">
+        <div class="logo-img">
+                    <img src="초록로고.png" width="40px;">
+                </div>
+                <div class="logo-text"><span class="logo-c">C</span><span class="logo-o">O</span><span class="logo-m1">M</span><span class="logo-m2">M</span><span class="logo-a">A</span></div>
+            
+    </div>
+  </header>
+
+  
+              
+       
+        
+        
+        <section>
+            <div class="video-box">
+            <video src="비밀의숲.mp4" autoplay loop muted class="video"></video>
+            <div class="search">
+            <h3>쉼이 필요한 순간, 쉼표 하우스에서</h3>
+            <div class="comment">도심 속 아늑한 휴식처부터 자연 속 힐링 숙소까지.</div>
+            <div class="search-box">
+            <div class="search-box2">목적지<br>
+                <input type="text" list="city" placeholder="목적지를 입력하세요.">
+                    <datalist id="city">
+                        <option value="1. 제주">
+                        <option value="2. 부산">
+                        <option value="3. 강릉">
+                        <option value="4. 서울">
+                        <option value="5. 여수">
+                    </datalist>
+            </div>
+            <div class="search-box2">
+                체크인<br>
+                <input type="date">
+            </div>
+            <div class="search-box2">
+                체크아웃<br>
+                <input type="date">
+            </div>
+            <div class="search-box2">
+                인원<br>
+                <input type="number" min="1" step="1">
+            </div>
+            <div class="search-item">
+            <a href="숙소검색_제주1.html"><img src="돋보기3.png" width="30px"></a>
+            </div>
+            
+            </div>
+            </div>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="best-hotel-box">
+
+                <div class="best-text">
+                    <h1>top<br>lank<br>hotel</h1>
+                </div>
+
+                <a href="노보텔 스위트 엠버서더.html">
+                    <div class="top-box-1">
+
+                        <div class="best-img-1">
+                            <img src="노보텔.png">
+                        </div>
+                
+                        <div class="best-img-text">
+                            <h3>노보텔 스위트 앰버서더 서울 용산</h3>
+                            <p>호텔 5성급</p>
+                            <p>수영장•사우나•피트니스•바•레스토랑</p>
+                            <p class="tax">315,000원</p>
+                            <p class="tax2">280,000원</p>
+                        </div>
+
+                    </div>
+                </a>
+                <a href="그랜드조선.html">
+                    <div class="top-box-2">
+
+                        <div class="best-img-2" >
+                            <img src="그랜드조선.png">
+                        </div>
+
+                        <div class="best-img-text2">
+                            <h3>그랜드 조선</h3>
+                            <p>호텔 5성급</p>
+                            <p>수영장•사우나•피트니스•바•레스토랑</p>
+                            <p class="tax">315,000원</p>
+                            <p class="tax2">300,000원</p>
+                        </div>
+
+                    </div>
+                </a>
+
+                <a href="카세로지 호텔.html">
+                    <div class="top-box-3">
+
+                        <div class="best-img-3">
+                            <img src="카세로지.png">
+                        </div>
+                
+                        <div class="best-img-text2">
+                            <h3>카세로지 호텔</h3>
+                            <p>호텔 5성급</p>
+                            <p>수영장•사우나•피트니스•바•레스토랑</p>
+                            <p class="tax">87,500원</p>
+                            <p class="tax2">45,000원</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="스카이베이.html">
+                    <div class="top-box-4">
+
+                        <div class="best-img-4">
+                            <img src="스카이베이.png">
+                        </div>
+                
+                        <div class="best-img-text2">
+                            <h3>스카이베이 호텔 경포</h3>
+                            <p>호텔 5성급</p>
+                            <p>수영장•사우나•피트니스•바•레스토랑</p>
+                            <p class="tax">334,500원</p>
+                            <p class="tax2">302,500원</p>
+                        </div>
+                
+                    </div>
+                </a>
+
+            </div>
+        </section>        
+
+         <section>
+            <div class="best-big-box">
+                <img src="비행기.png" width="50px">
+                <h1>best travel destination</h1>
+                <div class="best">
+
+                    <div class="best-box">
+                        <a href="숙소검색_제주1.html">
+                            <div class="jeju"></div>
+                            <p>jeju</p>
+                        </a>
+            
+                    </div>
+                    <div class="best-box">
+                        <a href="숙소검색_서울1.html">
+                            <div class="seoul"></div>
+                            <p>seoul</p>
+                        </a>
+                
+                        
+            
+                    </div>
+                    <div class="best-box">
+                        <a href="숙소검색_부산1.html">
+                            <div class="busan"></div>
+                            <p>busan</p>
+                        
+
+                        </a>
+                
+                        
+            
+                    </div>
+                    <div class="best-box">
+                        <a href="숙소검색_강릉1.html">
+                            <div class="gangnueng"></div>
+                            <p>gangnueng</p>
+                        </a>
+                
+                        
+            
+                    </div>
+                    <div class="best-box">
+                        <a href="숙소검색_경주1.html">
+                            <div class="gyeongju"></div>
+                            <p>gyeongju</p>
+                        </a>
+                
+                        
+            
+                    </div>
+                    <div class="best-box">
+                        <a href="숙소검색_담양1.html">
+                            <div class="damyang"></div>
+                            <p>damyang</p>
+                        </a>
+                
+                        
+            
+                    </div>
+                    
+                    
+            
+                </div>
+            </div>
+        </section>
+
+        <section class="event-box">
+            <button class="prev">&lang;</button>
+            <button class="next">&rang;</button>
+            <div class="event">
+            <a href="로그인회원가입유도.html">
+                <div class="event1">
+                    <h2>enjoy comma house!</h2>
+                    <p>로그인 하면 멤버십 할인가로 예약할 수 있어요.</p>
+                    <input type="button" href="로그인.html" value="로그인" class="bt1">
+                    <input type="button" href="회원가입.html" value="회원가입" class="bt2">
+                </div>
+            </a>
+
+            <a href="######">
+                <div class="event2">
+                    <p>유명 유튜버가 다녀간 투어</p>
+                    <h2>쉼표하우스 투어<br>보러가기</h2>
+                    <img src="투어.jpg">
+                 </div>
+            </a>
+            
+            <a href="#######">
+                <div class="event2">
+                    <p>전국 500여개 숙소 총집합</p>
+                    <h2>성수기 얼리버드<br>최대 5만원 할인</h2>
+                    <img src="경복궁1.png">
+                </div>
+            </a>
+            </div>
+
+
+            <div class="event">
+
+            <a href="#######">
+            <div class="event2">
+                <p>매일 오전 10시 선착순 오픈 !</p>
+                <h2>인기 호텔<br>3만원 할인 쿠폰!</h2>
+                <img src="3만원.png">
+            </div>
+            </a>
+            
+            <a href="#####">
+            <div class="event2">
+                    <p>국내여행 계획 중이라면 ?</p>
+                    <h2>리얼 리뷰<br>검증 숙소</h2>
+                    <img src="리얼리뷰.png">
+                    
+            </div>
+            </a>
+
+            <a href="######">
+            <div class="event2">
+                <p>여행이 필요한 지금</p>
+                <h2>최대 15만원<br>할인받기</h2>
+                <img src="할인.png">
+            </div>
+            </a>
+            </div>
+        </section>
+
+        
+        <section class="tour">
+            <div class="tour-big-box">
+                <h2>국내 관광지</h2>
+                <div class="tour-box" id="tour-box1">
+
+                    <a href="https://naver.me/Gn0yAbFX">
+                    <div class="mini-1">
+                        <div class="tour-img"><img src="남산타워.png"></div>
+                        <div class="tour-text">
+                            <span>서울 용산구 남산공원길</span>
+                            <h3>남산타워</h3>
+                            
+                        </div>
+                    </div>
+                    </a>
+
+                    <a href="https://naver.me/xzxmzK1j">
+                    <div class="mini-2">
+                        <div class="tour-img"><img src="광안리.png"></div>
+                        <div class="tour-text">
+                            <span>부산 수영구 광안동</span>
+                            <h3>광안리</h3>
+                            
+                        </div>
+                    </div>
+                    </a>
+
+                </div>
+
+                <div class="tour-box" id="tour-box2">
+
+                    <a href="https://naver.me/Fw7iyAYH">
+                    <div class="mini-1">
+                        <div class="tour-img"><img src="경복궁.png"></div>
+                        <div class="tour-text">
+                            <span>서울 종로구 사직로</span>
+                            <h3>경복궁</h3>
+                            
+                        </div>
+                    </div>
+                    </a>
+
+                    <a href="https://naver.me/xa5Rn5U3">
+                    <div class="mini-2">
+                        <div class="tour-img"><img src="성산일출봉.png"></div>
+                        <div class="tour-text">
+                            <span>제주 서귀포시 성산읍</span>
+                            <h3>성산일출봉</h3>
+                            
+                        </div>
+                    </div>
+                    </a>
+
+                </div>
+                
+                <div class="tour-box" id="tour-box3">
+
+                    <a href="https://naver.me/GgWkLaqd">
+                    <div class="mini-1">
+                        <div class="tour-img"><img src="전주한옥마을.png"></div>
+                        <div class="tour-text">
+                            <span>전북 전주시 완산구</span>
+                            <h3>전주한옥마을</h3>
+                            
+                        </div>
+                    </div>
+                    </a>
+
+                    <a href="https://naver.me/FxFtNY1f">
+                    <div class="mini-2">
+                        <div class="tour-img"><img src="죽녹원.jpg"></div>
+                        <div class="tour-text">
+                            <span>전남 담양군 담양읍</span>
+                            <h3>죽녹원</h3>
+                            
+                        </div>
+                    </div>
+                    </a>
+
+                </div>
+
+                <div class="tour-box" id="tour-box4">
+
+                    <a href="https://naver.me/GQ1lD1Z8">
+                    <div class="mini-1">
+                        <div class="tour-img"><img src="독도.png"></div>
+                        <div class="tour-text">
+                            <span>경북 울릉군 울릉읍</span>
+                            <h3>독도</h3>
+                            
+                        </div>
+                    </div>
+                    </a>
+
+
+                    <a href="https://naver.me/G9r59r5i">
+                    <div class="mini-2">
+                        <div class="tour-img"><img src="안목해변.png"></div>
+                        <div class="tour-text">
+                            <span>강원 강릉시 창해로</span>
+                            <h3>안목해변</h3>
+                            
+                        </div>
+                    </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="sale">
+                <div>
+                    <div class="sale1">
+                        <div><img src="힐링.png"></div>
+                        <h3>힐링 여행 패키지 특가</h3>
+                    </div>
+                    <div class="sale2">
+                        <a href="패키지여행_독도울릉도.html">
+                        <div>
+                            <div><img src="스노클링.png"></div>
+                            <h3>[독도/울릉도] 2박 효도 여행</h3>
+                            <p><span>19% </span>336,850원~</p>
+                        </div>
+                        </a>
+
+                        <a href="패키지여행_스키장.html">
+                        <div>
+                            <div><img src="스키장.png"></div>
+                            <h3>[강원] 스키장 / 리조트 포함</h3>
+                            <p><span>31% </span>176,999원~</p,>
+                        </div>
+                        </a>
+
+                        <a href="패키지여행_제주크루즈.html">
+                        <div>
+                            <div><img src="크루즈.png"></div>
+                            <h3>[제주] 크루즈 여행 / 2박</h3>
+                            <p><span>26% </span>289,760원~</p>
+                        </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="sale">
+                <div>
+                    <div class="sale1">
+                        <div><img src="힐링2.png"></div>
+                        <h3>여름 인기 레저 티켓</h3>
+                    </div>
+                    <div class="sale2">
+                        <a href="캐리비안베이.html">
+                        <div>
+                            <div><img src="캐리비안베이.png"></div>
+                            <h3>미들시즌 캐리비안베이 이용권</h3>
+                            <p><span>41% </span>26,000원~</p>
+                        </div>
+                        </a>
+
+                        <a href="롯데워터파크.html">
+                        <div>
+                            <div><img src="롯데워터파크.png"></div>
+                            <h3>롯데워터파크 하이시즌 종일권</h3>
+                            <p><span>50% </span>27,000원~</p>
+                        </div>
+                        </a>
+
+                        <a href="애버랜드.html">
+                        <div>
+                            <div><img src="에버랜드.png"></div>
+                            <h3>에버랜드 종일 이용권</h3>
+                            <p><span>53% </span>36,000원~</p>
+                        </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+<footer>
+  
+
+
+    <div class="foot-top">
+      <h2>enjoy your trip</h2>
+      <p>Comma House started with the simple idea of<br>creating a comfortable place where travelers can pause and rest during their journeys.</p>
+      <a href="introduce.html">BRAND STORY</a>
+    </div>
+
+    <div class="foot-left">
+      <div>
+      <img src="흰색로고.png">
+      </div>
+      <p>Company Name: Comma House | Owner: Chaerin Lee<br>
+Seoul, Guro-gu, Gyeongin-ro 445, Dongyang Mirae University<br>
+Email: coth4498@dongyang.ac.kr<br>
+Mail Order License No.: 2025-SeoulGuro-0456<br>
+Business Registration No.: 321-45-67890<br>
+KB Bank Account: 123401-04-987654<br>
+
+Business Hours: 24 hours | Office Days: Monday - Sunday</p>
+    </div>
+
+    <div class="foot-center">
+      <h3>customer care</h3>
+      <ul>
+        <li><a href="로그인.html">account</a></li>
+        <li><a href="이벤트소개.html">event</a></li>
+        <li><a href="question.html">FAQ</a></li>
+        <li><a href="이용약관.html">terms of use</a></li>
+      </ul>
+    </div>
+
+    <div class="foot-right">
+      <h3>Accommodations by Region</h3>
+      <ul>
+        <li><a href="숙소검색_제주1.html">jeju</a></li>
+        <li><a href="숙소검색_강릉1.html">gangnueng</a></li>
+        <li><a href="숙소검색_부산1.html">busan</a></li>
+        <li><a href="숙소검색_서울1.html">seoul</a></li>
+        <li><a href="숙소검색_경주1.html">gyeongju</a></li>
+        <li><a href="숙소검색_담양1.html">damyang</a></li>
+        
+      </ul>
+    </div>
+
+</footer>
+
+        </div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const events = document.querySelectorAll(".event-box .event");
+  const prevBtn = document.querySelector(".event-box .prev");
+  const nextBtn = document.querySelector(".event-box .next");
+  if (events.length === 0 || !prevBtn || !nextBtn) return;
+
+  let current = 0;
+
+  function showEvents() {
+    events.forEach((event, i) => {
+      event.style.display = (i === current) ? "block" : "none";
+    });
+  }
+
+  // 첫 번째 .event 보이도록 초기화
+  showEvents();
+
+  prevBtn.addEventListener("click", () => {
+    current = (current - 1 + events.length) % events.length;
+    showEvents();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    current = (current + 1) % events.length;
+    showEvents();
+  });
+});
+</script>
+
+
+    </body>
+</html>

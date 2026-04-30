@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쉼표하우스 마이페이지 찜목록</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color: #f7f4eb;
+            font-family: 'Malgun Gothic', sans-serif;
+        }
+        a{text-decoration: none; color:black;}
+        .header{
+            width:100%;
+            height:200px;
+            background-color: white;
+            border-bottom: 2px solid #d0d8cd;
+            position: relative;
+        }
+        .header>h1{
+            text-indent: 70px;
+            color:#001519;
+            position: absolute;
+            top:120px;
+            font-size: 30px;
+            opacity: 0.8;
+        }
+        .wishlist-count {
+            position: absolute;
+            top: 160px;
+            left: 70px;
+            color: #666;
+            font-size: 14px;
+        }
+        .re-big-box{
+            width: 90%;
+            position:relative;
+            left:5%;
+            top:50px;
+            margin-bottom: 100px;
+        }
+        .re-box{
+            width:100%;
+            height:300px;
+            border-bottom:1px solid #7d7d7d;
+            background-color: white;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        .re-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .re-box:last-child{
+            border:none;
+        }
+        .re-box-img{
+            width:40%;
+            height:300px;
+            float:left;
+        }
+        .re-box-img>img{
+            width:90%;
+            height:90%;
+            position:relative;
+            top:5%;
+            left:5%;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+        .re-box-text{
+            width: 60%;
+            height:300px;
+            float:right;
+            position:relative;
+            top:10%;
+            left:3%;
+        }
+        .re-box-text>p{
+            line-height: 30px;
+            font-size: 13px;
+            color:#31422e
+        }
+        .re-box-text>h2{
+            font-size:25px;
+            color:#001519;
+            margin: 5px 0;
+        }
+        .accommodation-type {
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .review{
+            font-weight: 700;
+        }
+        .star{
+            display: inline-block;
+            width:50px;
+            height:25px;
+            line-height: 25px;
+            text-align: center;
+            background-color: #31422e;
+            color:white;
+            border-radius: 25px;
+            font-size: 12px;
+            margin:10px 3px;
+        }
+        .tax1{
+            font-size: 20px;
+            position: absolute;
+            right:15%;
+            bottom:100px;
+            text-decoration: line-through;
+            color:#444;
+        }
+        .tax2{
+            font-size: 30px;
+            font-weight: 700;
+            position: absolute;
+            right:10%;
+            bottom:60px;
+            color: #001519;
+        }
+        .heart>button{
+            background-color: whitesmoke;
+            border-radius: 50%;
+            border:none;
+            color:red;
+            width:50px;
+            height:50px;
+            font-size: 35px;
+            position: absolute;
+            right:5%;
+            top:20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .heart>button:hover{
+            transform: scale(1.1,1.1);
+            box-shadow: 1px 1px 10px #bebebe;
+        }
+        .heart>button.unliked{
+            color:#ddd;
+        }
+        .heart>button.liked{
+            color:red;
+        }
+        .amenities {
+            font-size: 11px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .amenity-tag {
+            display: inline-block;
+            background-color: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 10px;
+            margin-right: 5px;
+            font-size: 10px;
+        }
+        .empty-wishlist {
+            text-align: center;
+            padding: 100px 20px;
+            color: #888;
+            display: none;
+        }
+        .empty-wishlist img {
+            width: 100px;
+            opacity: 0.3;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <div class="header">
+                <h1>찜 목록</h1>
+                <div class="wishlist-count">총 <span id="count">5</span>개의 숙소</div>
+            </div>
+            <div class="re-big-box" id="wishlist-container">
+                
+                <div class="re-box">
+                    <a href="파르나스.html">
+                        <div class="re-box-img">
+                            <img src="파라나스_객실.png" alt="파라나스 호텔">
+                        </div>
+                        <div class="re-box-text">
+                            <p class="accommodation-type">레지던스 · 호텔</p>
+                            <h2>파라나스 호텔</h2>
+                            <p>제주특별자치도 서귀포시 색달동 3039-1</p>
+                            <p class="review"><span class="star">★ 9.3</span> 100명의 후기</p>
+                            <div class="amenities">
+                                <span class="amenity-tag">무료WiFi</span>
+                                <span class="amenity-tag">주차가능</span>
+                                <span class="amenity-tag">조식포함</span>
+                            </div>
+                            <div class="tax1">453,400원</div>
+                            <div class="tax2">328,400원</div>
+                        </div>
+                    </a>
+                    <div class="heart"><button>❤︎</button></div>
+                </div>
+
+                
+                <div class="re-box">
+                    <a href="그랜드하얏트.html">
+                        <div class="re-box-img">
+                            <img src="그랜드하얏트1.png" alt="오션뷰 펜션">
+                        </div>
+                        <div class="re-box-text">
+                            <p class="accommodation-type">호텔</p>
+                            <h2>그랜드 하얏트</h2>
+                            <p>서울 특별시 용산구 소월로 322</p>
+                            <p class="review"><span class="star">★ 8.9</span> 67명의 후기</p>
+                            <div class="amenities">
+                                <span class="amenity-tag">도시뷰</span>
+                                <span class="amenity-tag">개별수영장</span>
+                                <span class="amenity-tag">호텔</span>
+                            </div>
+                            <div class="tax1">576,000원</div>
+                            <div class="tax2">693,033원</div>
+                        </div>
+                    </a>
+                    <div class="heart"><button>❤︎</button></div>
+                </div>
+
+                
+                <div class="re-box">
+                    <a href="씨마크 호텔.html">
+                        <div class="re-box-img">
+                            <img src="씨마크호텔1.png" alt="스카이 리조트">
+                        </div>
+                        <div class="re-box-text">
+                            <p class="accommodation-type">리조트 · 호텔</p>
+                            <h2>씨마크호텔</h2>
+                            <p>강원특별자치도 강릉시 해안로406번길 2, 25460</p>
+                            <p class="review"><span class="star">★ 9.1</span> 203명의 후기</p>
+                            <div class="amenities">
+                                <span class="amenity-tag">스파</span>
+                                <span class="amenity-tag">골프장</span>
+                                <span class="amenity-tag">키즈클럽</span>
+                            </div>
+                            <div class="tax1">650,000원</div>
+                            <div class="tax2">520,000원</div>
+                        </div>
+                    </a>
+                    <div class="heart"><button>❤︎</button></div>
+                </div>
+
+                
+                <div class="re-box">
+                    <a href="세인트 존스.html">
+                        <div class="re-box-img">
+                            <img src="세인트 존스1.jpg" alt="산림욕장 게스트하우스">
+                        </div>
+                        <div class="re-box-text">
+                            <p class="accommodation-type">호텔</p>
+                            <h2>세인트 존스 호텔</h2>
+                            <p>강원특별자치도 강릉시 창해로 307</p>
+                            <p class="review"><span class="star">★ 8.7</span> 45명의 후기</p>
+                            <div class="amenities">
+                                <span class="amenity-tag">힐링</span>
+                                <span class="amenity-tag">산책로</span>
+                                <span class="amenity-tag">바베큐</span>
+                            </div>
+                            <div class="tax1">120,000원</div>
+                            <div class="tax2">89,000원</div>
+                        </div>
+                    </a>
+                    <div class="heart"><button class="liked" onclick="toggleHeart(this)">❤︎</button></div>
+                </div>
+
+                
+                <div class="re-box">
+                    <a href="그랜드조선.html">
+                        <div class="re-box-img">
+                            <img src="그랜드 조선 호텔1.jpg" alt="제주 한옥스테이">
+                        </div>
+                        <div class="re-box-text">
+                            <p class="accommodation-type">호텔</p>
+                            <h2>그랜드 조선 부산</h2>
+                            <p>부산광역시 해운대구 해운대해변로 292</p>
+                            <p class="review"><span class="star">★ 9.0</span> 78명의 후기</p>
+                            <div class="amenities">
+                                <span class="amenity-tag">오션뷰</span>
+                                <span class="amenity-tag">한식조식</span>
+                                <span class="amenity-tag">와인바</span>
+                            </div>
+                            <div class="tax1">180,000원</div>
+                            <div class="tax2">135,000원</div>
+                        </div>
+                    </a>
+                    <div class="heart"><button class="liked" onclick="toggleHeart(this)">❤︎</button></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

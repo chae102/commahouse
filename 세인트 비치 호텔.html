@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>세인트 비치 호텔</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+  <style>
+    
+            *{
+                padding:0px; 
+                margin:0px; 
+                box-sizing:border-box; 
+                letter-spacing: 2px;
+            }
+            body{
+              background-color: #f7f4eb;
+              
+            }
+            a{
+                text-decoration:none;
+                color:#1f1f1f;
+            }
+            /*헤더*/
+            .header1{
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;
+                height: 60px;
+                z-index: 100;
+                background-color: #31422e;
+                
+            }
+            .header2{
+              visibility: hidden;
+              width: 100%;
+              height: 60px;
+              
+            }
+            .header1 a{
+              color:white;
+              letter-spacing: 5px;
+            }
+            ul{
+                list-style: none;
+            }
+            .header-left{
+              width:20%;
+              height:60px;
+              float:left;
+            }
+            .header-left>a>img{
+              width:25px;
+              height:35px;
+              margin-left:30px;
+              margin-top:12px;
+            }
+            .header-left>a>span{
+              display:inline-block;
+              font-size: 15px;
+              margin-left:10px;
+              font-weight: 800;
+              letter-spacing: 5px;
+              text-align: justify;
+            }
+            .header-center{
+              width:60%;
+              text-align: center;
+              float:left;
+              margin-top:16px;
+              
+            }
+            .header-center>ul>li{
+              display:inline-block;
+              width:20%;
+              font-size: 15px;
+            }
+            .header-right{
+              width:10%;
+              float:right;
+              margin-top:16px;
+            }
+            .header-right a{
+              border-radius: 18px;
+              border:2px solid white;
+              padding:5px 15px;
+              font-size: 14px;
+              letter-spacing: 3px;
+            }
+            .header-center a:hover{
+              text-decoration: underline;
+            }
+            .header-right a:hover{
+              color:#31422e;
+              background-color: white;
+            }
+
+
+
+
+    #body{
+      width:70%;
+      position: relative;
+      left:15%;
+      background-color: white;
+      border-radius: 70px 70px 70px 70px;
+      box-shadow: 2px 3px 10px #001519;
+      margin-top:50px;
+    }
+
+    
+    
+
+    /* 메인 이미지 */
+    #main-photo{
+      width:70%;
+      height: 660px;
+      position:relative;
+      left:15%;
+      background-color: white;
+      border-radius: 18px;
+      margin-bottom: 300px;
+      box-shadow: 3px 3px 5px gray;
+      margin-top:50px;
+    }
+    .image-gallery {
+      width:90%;
+      height: 510px;
+      position:relative;
+      left:5%;
+      top:40px;
+      
+    }
+    .large {
+      width: 50%;
+      position: relative;
+
+      
+    }
+    .large img {
+      float:left;
+      width: 100%;
+      height: 450px;
+      border-radius: 12px 0px 0px 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    #simg2 {
+      float:right;
+      border-radius: 0px 12px 0px 0px;
+    }
+    #simg3{
+      margin-top:5px;
+    }
+    #simg4 {
+      float:right;
+      border-radius: 0px 0px 12px 0px;
+      margin-top:5px;
+    }
+
+
+    .large img:hover {
+      box-shadow: 0 7px 10px rgba(0,0,0,0.15);
+    }
+    .thumbnails {
+      width: 50%;
+      display:inline-block;
+      
+    }
+    .thumbnails img {
+      width: 50%;
+      height: 220px;
+      padding-left:9px;
+    }
+
+    /* 메인 사진 설명 */
+    .main-photo-text{
+      width:90%;
+      position:relative;
+      left:5%;
+    }
+    #main-photo h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #001519;
+      
+    }
+
+    #main-photo h2 {
+      margin: 0;
+      font-size: 16px;
+      color: #666;
+      
+    }
+
+    .info{
+      position:relative;
+      width:100%;
+    }
+    .info p {
+      
+      font-size: 16px;
+      color: #666;
+    }
+    .stars {
+      font-size: 18px;
+      color: #f5d623;
+      font-weight: 700;
+      
+      
+    }
+    .tax{
+      font-weight: 900;
+      font-size:32px;
+      position:absolute;
+      right:8px;
+      bottom:10px;
+      text-shadow: 2px 2px 5px #b0c3b1;
+      
+    }
+
+  
+
+    /* 네비게이션 바*/
+    .section-nav-box{
+      width:87%;
+      height:50px;
+      position:absolute;
+      top:-50px;
+      left:6.5%;
+
+      
+    }
+
+    
+
+   
+
+    .section-nav a {
+      display: block;
+      float:left;
+      background-color: #001519;
+      box-shadow: -1px -1px 1px #424b4d;
+      color:white;
+      font-weight: 700;
+      font-size:20px;
+      line-height: 50px;
+      width:15%;
+      transition: all 0.3s;
+      text-align: center; 
+      border-radius: 10px 10px 0px 0px;
+    }
+  
+    .section-nav a:hover{
+      background-color: white;
+      border-color: #001519;
+      color:#001519;
+      box-shadow: none;
+
+    }
+   
+    
+    .int{
+      width:100%;
+      
+    }
+    .int>.int-head{
+      
+      background-color:white;
+      color:#001519;
+      border:5px solid #001519; 
+      width:100%;
+      height:300px;
+      text-align: center;
+      padding:40px 0px;
+      border-radius: 70px 70px 0px 0px;
+      
+    }
+    .int-head>img{
+      margin-top:40px;
+      margin-bottom:20px;
+      
+    }
+    .int h2{
+    margin-bottom:20px;
+    font-size:35px;
+    font-weight: 900;
+
+   }
+    .int-head>h2{
+      font-size: 40px;
+      margin-bottom: 150px;
+  
+    }
+    .int-img-box{
+      clear:both;
+      width:100%;
+      height:1600px;
+      position: relative;
+      padding-bottom:100px;
+      padding-top:100px;
+      background-color: white;
+
+    }
+    .int-img-box img{
+      display:block;
+      width:100%;
+      height:350px;
+      
+    }
+    .back{
+      width:60%;
+      height:350px;
+      float:left;
+
+    }
+    #back{
+      width:60%;
+      margin:100px 0px;
+      height:350px;
+      float:right;
+
+    }
+    .int-img{
+      width:100%;
+      border-radius: 0px 100px 100px 0px;
+      overflow: hidden;
+    }
+    #int-img{
+      width:100%;
+      border-radius: 100px 0px 0px 100px;
+      overflow: hidden;
+    }
+
+
+   .int-text1{
+    width:37%;
+    height:350px;
+    float:right;
+    border-radius: 120px 0px 0px 120px;
+    background-color: white;
+
+   }
+   .int-text1>h2, .int-text1>p{
+    position:relative;
+    top:33%;
+    width:90%;
+    left:10px;
+   }
+   .int-text2>h2, .int-text2>p{
+    position:relative;
+    top:33%;
+    width:90%;
+    right:0;
+    text-align: right;
+    left:30px;
+
+    
+   }
+   .int-text3>h2, .int-text3>p{
+    position:relative;
+    top:33%;
+    width:90%;
+    left:10px;
+
+    
+   }
+   
+   .int-text2{
+    display:block;
+    float:left;
+    width:37%;
+    height:350px;
+    border-radius: 0px 120px 120px 0px;
+    margin:100px 0px;
+    background-color:white;
+
+   }
+   .int-text3{
+    display:block;
+    float:right;
+    width:37%;
+    height:350px;
+    border-radius: 120px 0px 0px 120px;
+    background-color:white;
+   }
+   
+
+   /*슬라이드 객실 소개*/
+   
+   #big-room-info{
+    width:100%;
+    height:1300px;
+    background-color: white;
+   }
+   #big-room-info>div{
+    width:100%;
+    height:1300px;
+    background-color: #e7f0e5;
+    border-radius: 70px 70px 0px 0px;
+    padding-top:100px;
+   }
+   .room-info{
+    width:100%;
+   }
+   .room-layout{
+    width:80%;
+    height:330px;
+    position:relative;
+    left:10%;
+    border-radius: 12px;
+    box-shadow: 2px 2px 4px #001519;
+    margin-bottom:50px;
+    background-color: white;
+    
+   }
+  
+   
+   .slideShow{
+    width:45%;
+    float:left;
+   }
+   .slides{
+    position:relative;
+    width:90%;
+    left:5%;
+    top:15px;
+    height:215px;
+   }
+   .slides>img{
+    display:block;
+    width:100%;
+    height:100%;
+    border-radius: 12px;
+    
+   }
+   .slides>button{
+    position:absolute;
+    top:75px;
+    height:40px;
+    width:30px;
+    border:none;
+    background-color: transparent;
+    color:black;
+    font-size: 24px;
+    opacity:0.5;
+    z-index: 10;
+   }
+   .slides>.prev{
+    left:0px;
+    
+   }
+   .slides>.next{
+    right:0px;
+   }
+   .slides>button:hover{
+    background-color: #222;
+    color:#fff;
+    opacity: 0.6;
+    cursor:pointer;
+   }
+   .room-detail1{
+    width:37%;
+    position:relative;
+    left:30px;
+    top:22px;
+   }
+
+   .room-detail1 p{
+    position:relative;
+    font-size:16px;
+    border-bottom: 1px solid gray;
+    padding:2px;
+    padding-bottom:5px;
+    font-weight: 600;
+   }
+   .room-info-sub{
+    color:#717171;
+    font-size:9px;
+    position:relative;
+    left:5px;
+   }
+   .room-detail1 img{
+    width:15px;
+    height:15px;
+    position:relative;
+    top:5px;
+    left:2px;
+   }
+   .room-details2{
+    width:55%;
+    height:400px;
+    float:right;
+   }
+   .reservation-box{
+    padding-top:20px;
+    padding-left:20px;
+   }
+   .type-info-1{
+    font-weight:700;
+    font-size:14px;
+   }
+   .type-info-2{
+    font-weight:700;
+    font-size:25px;
+    line-height: 40px;
+   }
+   .type-info-3{
+    font-size:10px;
+    letter-spacing: 0px;
+   }
+   .type-info-3 span{
+    font-size:11px;
+    font-weight: 700;
+   }
+   .reserve-zone{
+    text-align: right;
+    position:relative;
+    top:90px;
+    right:30px;
+   }
+   .price{
+    font-weight:700;
+    text-shadow: 1px 1px 1px #6a8c6e;
+    font-size:25px;
+   }
+   .cancel{
+    font-size:12px;
+    letter-spacing: 0px;
+   }
+   .reserve-zone button{
+    border-radius: 10px;
+    display:block;
+    float:right;
+    height:50px;
+    border:none;
+    margin-top:20px;
+   }
+   .jang{
+    padding:8px 10px;
+   
+
+   }
+   .re-bt{
+    font-size:15px;
+    font-weight: 700;
+    padding:5px 20px;
+    color:white;
+    background-color: #001519;
+    position: relative;
+    left:10px;
+   }
+   .jang:hover{
+    border:1px solid #555;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #444;
+   }
+   .re-bt:hover{
+    cursor: pointer;
+    background-color: white;
+    color:#001519;
+    border:2px solid #001519;
+    box-shadow: 2px 2px 3px #001519;
+   }
+   
+    /* 상세 정보 */
+
+
+    .accommodation-info{
+      width:100%;
+      border-radius: 70px 70px 0px 0px;
+      padding:100px 0px;
+    }
+    .accommodation-info>div{
+      width:80%;
+      padding: 30px 40px;
+      border-radius: 40px;
+      color: #333;
+      margin: 0px auto;
+      background-color: white;
+      border:3px solid #001519;
+      
+    }
+
+    .accommodation-info h2 {
+      font-size: 28px;
+      font-weight: 700;
+      border-bottom: 3px solid #001519;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+      color: #001519;
+    }
+
+    .accommodation-info h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      color: #001519;
+    }
+
+    .accommodation-info p,
+    .accommodation-info li {
+      font-size: 13px;
+      color: #444;
+      letter-spacing: 1px;
+    }
+
+    .accommodation-info ul {
+      padding-left: 10px;
+    }
+
+    .accommodation-info strong {
+      color: #222;
+    }
+
+    .info-group {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+
+
+
+    .accommodation-info .notice {
+      background-color: #e7f0e5;
+      padding: 2px 20px 10px 20px;
+      border-left: 4px solid #001519;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+    .facility-wrapper {
+    width:100%;
+    
+    }
+    .facility-wrapper>h3{
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      color: #001519;
+    }
+    .facility-table {
+      width: 70%;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      opacity: 0.7;
+      margin-top:10px;
+    }
+
+    .facility-table td, .facility-table th {
+      padding: 10px;
+      text-align: center;
+      font-size: 13px;
+      
+    }
+    
+    .facility-table tr:nth-child(odd) td:nth-child(odd),
+.facility-table tr:nth-child(even) td:nth-child(even) {
+  background-color:#e7f0e5;
+}
+
+
+    /* 지도 */
+    .map-section{
+      width:100%;
+      height:700px;
+
+    }
+    .map-section>div{
+      position:relative;
+      width: 100%;
+      height:700px;
+      margin: 0px auto;
+      padding: 100px 20px;
+      border-radius: 70px 70px 0px 0px;
+      background-color: #e7f0e5;
+
+    }
+
+    .map-section h2 {
+      position:absolute;
+      top:130px;
+      left:70px;
+      font-weight: 900;
+      font-size: 25px;
+      color: #001519;
+      letter-spacing: 3px;
+    }
+    .map-section ul{
+      display: block;
+      padding:0px;
+      width:180px;
+      color:#001519;
+      position:relative;
+      left:30px;
+      top:70px;
+      border-left:7px solid #001519;
+    }
+    .map-section>div>ul>li{
+      margin:30px 0px;
+      font-weight: 550;
+      font-size: 15px;
+      text-align: center;
+    }
+    .map-section iframe {
+      position:absolute;
+      right:50px;
+      top:110px;
+      width: 70%;
+      height: 400px;
+      border-radius: 14px;
+      border: none;
+    }
+
+ /* 리뷰  */
+  
+  .reser-sec{
+    position: relative;
+    width:100%;
+    background-color: #e7f0e5;
+    border-radius: 0px 0px 70px 70px;
+  }
+  .reser-sec>button{
+    position:absolute;
+    top:610px;
+    height:70px;
+    width:40px;
+    border:none;
+    background-color: transparent;
+    color:#001519;
+    font-size: 50px;
+    opacity:0.3;
+    z-index: 10;
+   }
+   .review-prev{
+    left:5px;
+    
+   }
+   .review-next{
+    right:5px;
+   }
+   .reser-sec>button:hover{
+    background-color: #001519;
+    color:#fff;
+    opacity: 0.5;
+    cursor:pointer;
+    border-radius: 12px;
+   }
+  .reservation{
+    display: none;
+    width:100%;
+    height:1170px;
+    background-color: white;
+    border-radius: 70px;
+    margin-bottom:200px;
+    padding:60px 0px;
+  }
+  .re-user{
+    width:100%;
+    padding-top:50px;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: underline;
+
+  }
+  .re-star{
+    width:100%;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    padding-bottom: 30px;
+  }
+  
+  .re-big-box{
+    width:100%;
+    position:relative;
+    height:450px;
+    letter-spacing: 2px;
+    
+
+  }
+  #re-big-box{
+    border-radius: 0px 0px 70px 70px;
+
+  }
+  .re-box1{
+    width:39.5%;
+    position:absolute;
+    left:8.5%;
+    top:33px;
+    height:400px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px #7a7979;
+    }
+  .re-box1:hover,.re-box2:hover,.re-box3:hover,.re-box4:hover{
+    animation: big 1s;
+    z-index: 50;
+    cursor: pointer;
+
+  }
+  .re-box2{
+    width:39.5%;
+    position:absolute;
+    right:8.5%;
+    top:33px;
+    height:400px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px #7a7979;
+
+  }
+  .re-box3{
+    width:39.5%;
+    position:absolute;
+    left:8.5%;
+    bottom:33px;
+    height:400px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px #7a7979;
+
+  }
+
+  .re-box4{
+   width:39.5%;
+    position:absolute;
+    right:8.5%;
+    bottom:33px;
+    height:400px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px #7a7979;
+
+  }
+
+  .re-img{
+    width:50px;
+    position:absolute;
+    height:50px;
+    left:10px;
+    top:10px;
+    opacity: 0.5;
+
+  }
+  .re-img>img{
+    width:100%;
+  }
+  .re-img2{
+    width:100%;
+    height:250px;
+  }
+  .re-img2 img{
+    display:block;
+    width:100%;
+    height:250px;
+  }
+  .re-text{
+    width:100%;
+    height:150px;
+    padding:10px 20px;
+    position:relative;
+    font-weight: 550;
+    color:#333;
+    background-color: #f7f4eb;
+  }
+  .re-text>p{
+    padding:5px;
+  }
+  
+
+
+/*푸터*/
+
+    footer {
+      clear:both;
+      background-color: #31422e;
+      color: #e7f0e5;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    footer .container {
+
+      background-color: transparent; 
+      margin-top: 0;
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    .footer-content {
+      width:100%;
+      height:250px;
+    }
+    .footer-section{
+      width:20%;
+      display: inline-block;
+      position:relative;
+      left:10%;
+      padding:30px;
+      padding-top:50px;
+    }
+
+    .footer-section h3 {
+      font-size: 15px;
+      color: #ffffff;
+      font-weight: 550;
+      border-bottom: 2px solid #8a9e7f;
+      padding-bottom: 10px;
+      text-indent: 15px;
+    }
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+      text-indent: 15px;
+    }
+    .footer-section ul li {
+      margin-top: 10px;
+    }
+    .footer-section ul li a {
+      color: #ccc;
+      transition: color 0.3s;
+      font-size:13px;
+    }
+    .footer-section ul li a:hover {
+      color: white;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #555;
+      color: #ccc;
+      font-size: 11px;
+    }
+    
+    @keyframes big {
+      0% { transform: scale(1,1)  }
+      100% {transform: scale(1.1,1.1) }
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <!-- 헤더 -->
+  <header>      
+    <div class="header1">
+      <div class="header-left"><a href="main.html"><img src="logo.png"><span>COMMA<br>HOUSE</span></a></div>
+      <div class="header-center">
+      <ul>
+        <li><a href="main.html">HOME</a></li>
+        <li><a href="search.html">SEARCH</a></li>
+        <li><a href="introduce.html">INTRODUCE</a></li>
+        <li><a href="question.html">QUESTION</a></li>
+      </ul>
+      </div>
+      <div class="header-right"><a href="mypage.html" class="mypage">MY PAGE</a></div>
+    </div>
+    <div class="header2"></div>
+  </header>
+
+  <!-- 메인 이미지 -->
+
+  <div id="main-photo">
+    <div class="image-gallery">
+      <div class="large">
+        <img id="mainLargeImg" src="세인트 비치 호텔.jpg" alt="메인 이미지" />
+      </div>
+      <div class="thumbnails">
+        <img id="simg1" src="세인트 비치 호텔.jpg" alt="썸네일1" onclick="changeMainImage(this, 'mainLargeImg')" />
+        <img id="simg2" src="더엠2.jpg" alt="썸네일2" onclick="changeMainImage(this, 'mainLargeImg')" />
+        <img id="simg3" src="더엠3.jpg" alt="썸네일3" onclick="changeMainImage(this, 'mainLargeImg')" />
+        <img id="simg4" src="더엠4.jpg" alt="썸네일4" onclick="changeMainImage(this, 'mainLargeImg')" />
+      </div>
+    </div>
+    <div class="main-photo-text">
+      <h1>세인트 비치 호텔</h1>
+      <h2>5성급 · Caseology</h2>
+      <div class="info">
+        <p>서귀포시, 제주, 대한민국</p>
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <div class="tax">145,000원~</div>
+      </div>
+      </div>
+    </div>
+<!-- 1. 숙소 소개 -->
+<div id="body">
+  <div class="section-nav-box">
+    <nav class="section-nav">
+      <div><a href="#room-info-1">객실</a></div>
+      <div><a href="#accommodation-info">정보</a></div>
+      <div><a href="#map">지도</a></div>
+      <div><a href="#reservation">리뷰</a></div>
+    </nav>
+  </div>
+
+  <div class="int">
+    <div class="int-head">
+    <img src="진녹색.png" width="35px">
+    <h2>세인트 비치 호텔</h2>
+    </div>
+    <div class="int-img-box">
+      <div class="back">
+      <div class="int-img">
+      <img src="더엠.jpg">
+      </div>
+      </div>
+
+     
+      <div class="int-text1">
+      <h2>OCEAN VIEW</h2>
+      <p>광활하게 펼쳐진 바다를<br>자랑하는 제주의 럭셔리한 랜드마크</p>
+      </div>
+      
+
+      <div id="back">
+      <div id="int-img">
+      <img src="더엠2.jpg">
+      </div>
+      </div>
+      
+      <div class="int-text2">
+      <h2>POOL</h2>
+      <p>전면 유리창을 통해 들어오는 자연 채광과<br>아름다운 바다 전망</p>
+      </div>
+
+      <div class="back">
+      <div class="int-img">
+      <img src="더엠4.jpg">
+      </div>
+      </div>
+
+      <div class="int-text3">
+      <h2>DINING ROOM</h2>
+      <p>화려한 야경을 자랑하는 스테이크 & 씨푸드<br>그릴 레스토랑</p>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+<!-- 1. 객실 소개 -->
+
+
+<section id="big-room-info">
+  <div>
+  
+  <div id="room-info-1">
+    <section class="room-info">
+      <div class="room-layout">
+      <div class="slideShow">
+        <div class="slides">
+          <img src="파크하얏트.png" alt="">
+          <img src="파크하얏트2.png" alt="">
+          <img src="파크하얏트3.png" alt="">
+          <img src="파크하얏트2.png" alt="">
+          <img src="파크하얏트3.png" alt="">
+          <img src="파크하얏트.png" alt="">
+          <button class="prev">&lang;</button>
+          <button class="next">&rang;</button>
+        </div>
+      </div>
+        
+        
+        <div class="room-detail2">
+
+          <div class="reservation-box">
+            <p class="type-info-1">숙박</p>
+            <p class="type-info-2">회원특가</p>
+            <p class="type-info-3">체크인 <span>15:00</span> ~ 체크아웃 <span>11:00</span></p>
+          </div>
+            <div class="reserve-zone">
+              <p class="price">346,500원</p>
+              <p class="cancel">무료취소(예약 익일 24:00 전까지)</p>
+              <button class="re-bt" onclick="reservation.html">예약하기</button>
+              <button class="jang" onclick="bag.html"><img src="장바구니.png" width="25px" height="25px;"></button>
+            </div>
+
+
+        </div>
+        <div class="room-detail1">
+          <p class="room-name">하얏트 글로벌 오퍼 스탠다드 킹</p>
+
+          <div class="room-info-sub">
+            <img src="user.png">&nbsp;기준 2인, 최대 2인<br>
+            <img src="침대.png">&nbsp;킹베드 1개<br>
+            <img src="사진.png">&nbsp;도시 전망<br>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <div id="room-info-2">
+    <section class="room-info">
+      <div class="room-layout">
+      <div class="slideShow">
+        <div class="slides">
+          <img src="파크하얏트.png" alt="">
+          <img src="파크하얏트2.png" alt="">
+          <img src="파크하얏트3.png" alt="">
+          <img src="파크하얏트2.png" alt="">
+          <img src="파크하얏트3.png" alt="">
+          <img src="파크하얏트.png" alt="">
+          <button class="prev">&lang;</button>
+          <button class="next">&rang;</button>
+        </div>
+      </div>
+        
+        
+        <div class="room-detail2">
+
+          <div class="reservation-box">
+            <p class="type-info-1">숙박</p>
+            <p class="type-info-2">회원특가</p>
+            <p class="type-info-3">체크인 <span>15:00</span> ~ 체크아웃 <span>11:00</span></p>
+          </div>
+            <div class="reserve-zone">
+              <p class="price">346,500원</p>
+              <p class="cancel">무료취소(예약 익일 24:00 전까지)</p>
+              <button class="re-bt" onclick="reservation.html">예약하기</button>
+              <button class="jang" onclick="bag.html"><img src="장바구니.png" width="25px" height="25px;"></button>
+            </div>
+
+
+        </div>
+        <div class="room-detail1">
+          <p class="room-name">하얏트 글로벌 오퍼 스탠다드 킹</p>
+
+          <div class="room-info-sub">
+            <img src="user.png">&nbsp;기준 2인, 최대 2인<br>
+            <img src="침대.png">&nbsp;킹베드 1개<br>
+            <img src="사진.png">&nbsp;도시 전망<br>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <div id="room-info-3">
+    <section class="room-info">
+      <div class="room-layout">
+      <div class="slideShow">
+        <div class="slides">
+          <img src="파크하얏트.png" alt="">
+          <img src="파크하얏트2.png" alt="">
+          <img src="파크하얏트3.png" alt="">
+          <img src="파크하얏트2.png" alt="">
+          <img src="파크하얏트3.png" alt="">
+          <img src="파크하얏트.png" alt="">
+          <button class="prev">&lang;</button>
+          <button class="next">&rang;</button>
+        </div>
+      </div>
+        
+        
+        <div class="room-detail2">
+
+          <div class="reservation-box">
+            <p class="type-info-1">숙박</p>
+            <p class="type-info-2">회원특가</p>
+            <p class="type-info-3">체크인 <span>15:00</span> ~ 체크아웃 <span>11:00</span></p>
+          </div>
+            <div class="reserve-zone">
+              <p class="price">346,500원</p>
+              <p class="cancel">무료취소(예약 익일 24:00 전까지)</p>
+              <button class="re-bt" onclick="reservation.html">예약하기</button>
+              <button class="jang" onclick="bag.html"><img src="장바구니.png" width="25px" height="25px;"></button>
+            </div>
+
+
+        </div>
+        <div class="room-detail1">
+          <p class="room-name">하얏트 글로벌 오퍼 스탠다드 킹</p>
+
+          <div class="room-info-sub">
+            <img src="user.png">&nbsp;기준 2인, 최대 2인<br>
+            <img src="침대.png">&nbsp;킹베드 1개<br>
+            <img src="사진.png">&nbsp;도시 전망<br>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+  </div>
+</section>
+
+
+
+  
+
+
+<!-- 3. 숙소 규정 소개 -->
+
+  <section class="accommodation-info" id="accommodation-info">
+    <div>
+    <h2>숙박 시설 정보</h2>
+    
+    <div class="info-group">
+      <h3>체크인 / 체크아웃</h3>
+      <p><strong>체크인 :</strong> 15:00 ~</p>
+      <p><strong>체크아웃 :</strong> ~ 11:00</p>
+    </div>
+
+    <div class="info-group">
+      <h3>연락처</h3>
+      <p><strong>연락처 :</strong> +82-519901234</p>
+      <p><strong>팩스번호 :</strong> 82-519901235</p>
+    </div>
+
+    <div class="info-group">
+      <h3>시설 및 서비스</h3>
+      <ul>
+        <li>숙소 등급 : 5 성급</li>
+        <li>객실수 : 269 실</li>
+        <li>건물 갯수 : 1 동</li>
+        <li>건물 층수 : 33 층</li>
+        <li>개업 : 2013 년</li>
+        <li>고객 응대 가능 언어 : 일본어, 중국어, 한국어, 영어</li>
+      </ul>
+    </div>
+
+    <div class="info-group notice">
+      <h3>숙소 특별 공지</h3>
+      <p>&gt; 잠깐! 이용 전 참고해주세요.</p>
+      <p>&gt; 2025년 04월 01일 부로 스위트 객실 타입명이 변경됩니다.</p>
+      <ul>
+        <li>Park Family Suite → Family Suite</li>
+        <li>Park Executive Family Suite → Family Ocean Suite</li>
+        <li>Park Premium Family Suite → Premium Family Ocean Suite</li>
+        <li>Park Executive Marina Suite → Marina Ocean Corner Suite</li>
+      </ul>
+    </div>
+
+    <div class="info-group">
+      <h3>이용안내</h3>
+      <p>&nbsp;&nbsp;예약 시 참고사항</p>
+      <ul>
+        <li>상세 설명의 취소규정에 따라 취소 가능하며, 취소 원할 시 고객센터로 연락 부탁드립니다.</li>
+        <li>체크인 15:00 이후, 체크아웃 11:00 이전</li>
+        <li>부모동반 아동 투숙 가능 (만 12세 이하 무료)</li>
+        <li>소아 동반 투숙 시, 소아 나이 기재 필수 (미기재 시 예약 지연)</li>
+        <li>유아베드 36개월까지 이용 가능 (사전 요청 필수)</li>
+        <li>인원 추가 1인 77,000원</li>
+        <li>모든 객실은 기준인원이 있으며, 기준인원 외 추가인원 비용 발생</li>
+        <li>엑스트라 베드 추가 무료 (선착순, 사전 확정 불가)</li>
+        <li>트윈 객실 침대 추가 불가, 스위트 객실 가능</li>
+      </ul>
+    </div>
+
+    <div class="info-group">
+      <h3>객실 인원 안내</h3>
+      <ul>
+        <li>패밀리 스위트, 패밀리 오션 스위트, 프리미엄 패밀리 오션 스위트</li>
+        <li>기준 인원 : 성인 2명 + 소아 2명 (추가 비용 없음)</li>
+        <li>최대 인원 : 성인 3명 + 소아 1명 또는 성인 4명 (추가 비용 발생)</li>
+      </ul>
+    </div>
+
+    <div class="info-group">
+      <h3>조식 안내</h3>
+      <ul>
+        <li>메뉴: 뷔페</li>
+        <li>이용시간: 06:30 ~ 10:00</li>
+        <li>성인 (만13세 이상) : 63,000원</li>
+        <li>소아 (만6-12세) : 31,500원</li>
+        <li>소아 (만5세 이하) : 무료</li>
+      </ul>
+    </div>
+
+    <div class="info-group">
+      <h3>확인 사항</h3>
+      <ul>
+        <li>2024년 1월 1일부터 일회용 칫솔, 치약 등 무상 제공 중단, 미니바 판매용으로 유료 제공</li>
+        <li>디파짓 제도 (현금 및 카드)</li>
+        <li>무료 Wi-Fi 제공</li>
+        <li>숙박객 무료 주차 (발렛파킹 유료)</li>
+        <li>미성년자 상품 판매 및 정보 요청 금지</li>
+        <li>만 19세 미만은 보호자 동반 시 이용 가능</li>
+        <li>부대시설: 비즈니스 센터, 피트니스 센터, 실내수영장, 라운지, 레스토랑, 사우나(유료), 세탁(유료)</li>
+      </ul>
+    </div>
+
+    <div class="info-group">
+      <h3>2025년 사우나/수영장 휴관일 안내</h3>
+      <p>수영장 정기 점검일 : 5월 12일~16일, 9월 24일</p>
+      <p>사우나 정기 점검일 : 1월 15일, 2월 12일, 3월 19일, 4월 16일, 5월 14일, 6월 18일, 7월 16일, 9월 17일, 10월 15일, 11월 19일, 12월 17일</p>
+      <p>정기 점검일 중에는 해당 시설 이용이 불가합니다.</p>
+    </div>
+
+    <div class="info-group">
+      <h3>실내수영장 이용 안내</h3>
+      <ul>
+        <li>이용시간: 오전 6시 ~ 오후 10시 (브레이크 타임 : 오전 11시 - 오후 12시)</li>
+        <li>장소: 4층</li>
+        <li>등록된 투숙객 무료 이용 가능, 0세~만12세는 보호자동반 필수</li>
+        <li>수영복 착용 필수 (개인지참)</li>
+        <li>수영장 아기용 구명조끼 무료 대여 제공 (한정 수량)</li>
+        <li>수영장 내 튜브 사용 불가</li>
+        <li>수영장 이용 시 수영모 착용 필수</li>
+      </ul>
+    </div>
+
+
+    
+
+    <div class="info-group">
+      <h3>부대시설 정보</h3>
+      <ul>
+        <li>사우나: 오전 6시 ~ 오후 10시, 4층, 만 16세 이상 이용 가능, 유료 (55,000원), 스위트 객실 50% 할인</li>
+        <li>피트니스 센터 : 오전 6시 ~ 밤 10시</li>
+        <li>스파: 스파 업장 문의 (051-990-1440)</li>
+        <li>호텔-부산역 수화물 운송서비스 (유료)</li>
+        <li>24시간 컨시어지 서비스</li>
+        <li>현장 결제 및 추가비용 호텔 프론트 문의</li>
+      </ul>
+    </div>
+    <div class="facility-wrapper">
+      <h3>시설/서비스</h3>
+    <table class="facility-table">
+      <tr>
+        <td><img src="이모티콘/바.png" width="20" height="20"><br>BAR</th>
+        <td><img src="이모티콘/헬스장.png" width="20" height="20"><br>헬스장</th>
+        <td><img src="이모티콘/수영장.png" width="20" height="20"><br>수영장</th>
+        <td><img src="이모티콘/사우나.png" width="20" height="20"><br>사우나</th>
+      </tr>
+      <tr>
+        <td><img src="이모티콘/와이파이.png" width="20" height="20"><br>인터넷</th>
+        <td><img src="이모티콘/식당.png" width="20" height="20"><br>식당</th>
+        <td><img src="이모티콘/금연.png" width="20" height="20"><br>금연</th>
+        <td><img src="이모티콘/TV.png" width="20" height="20"><br>TV</th>
+      </tr>
+      <tr>
+        <td><img src="이모티콘/에어컨.png" width="20" height="20"><br>에어컨</th>
+        <td><img src="이모티콘/자동차.png" width="20" height="20"><br>주차장</th>
+        <td><img src="이모티콘/샤워실.png" width="20" height="20"><br>샤워실</th>
+        <td><img src="이모티콘/프린터.png" width="20" height="20"><br>프린터</th>
+      </tr>
+    </table>
+    </div>
+
+    </div>
+  </section>
+
+
+  <!-- 4. 지도 -->
+  <section class="map-section" id="map">
+    <div>
+    <h2>위치/교통</h2>
+    <ul>
+      <li>서귀포터미널<br><img src="차량.png" width="15px;" height="15px"> 차량 19분</li>
+      <li>중문 색달 해수욕장<br><img src="지하철.png" width="15px;" height="15px"> 차량 15분</li>
+      <li>안덕계곡<br><img src="도보.png" width="15px;" height="15px"> 차량 15분</li>
+      <li>안덕계곡<br><img src="버스.png" width="15px;" height="15px"> 차량 15분</li>
+    </ul>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262.0039378219544!2d129.14153701655437!3d35.156522543509176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356892afa1951005%3A0x9a03dca49a5366e5!2z7YyM7YGsIO2VmOyWj-2KuCDrtoDsgrA!5e0!3m2!1sko!2skr!4v1748935205201!5m2!1sko!2skr" 
+    ></iframe>
+    </div>
+  </section>
+
+  <section class="reser-sec">
+    <button class="review-prev">&lang;</button>
+    <button class="review-next">&rang;</button>
+
+
+    <!--1번-->
+    <div class="reservation">
+    
+      <div class="re-user"><p>쉼표하우스 유저들의 후기</p></div>
+      <div class="re-star"><span>★</span> 4.7/5.0</div>
+    
+
+    
+    <div class="re-big-box">
+      <div class="re-box1">
+
+        <div class="re-img2"><img src="파크하얏트.png"></div>
+        <div class="re-text"><p>@user-name</p><p>너무 만족스러운 여행이었어요! 방도 깨끗하고 직원분들도 정말 친절하셨어요. 위치도 좋고 다시 방문하고 싶어요.</p></div>
+      </div>
+
+
+      <div class="re-box2">
+
+        <div class="re-img2"><img src="파크하얏트.png"></div>
+        <div class="re-text"><p>@user-name</p><p>조용하고 편안한 분위기. 가족여행으로 방문했는데, 아이들도 좋아하고 침구도 폭신해서 너무 좋았어요.</p></div>
+      </div>
+    </div>
+
+    <div class="re-big-box" id="re-big-box">
+      <div class="re-box3">
+
+        <div class="re-img2"><img src="파크하얏트2.png"></div>
+        <div class="re-text"><p>@user-name</p><p>주차장 넓고 조식도 맛있어요. 주차가 여유롭고 조식이 정갈하고 깔끔해서 기억에 남네요.</p></div>
+      </div>
+
+
+      <div class="re-box4">
+
+        <div class="re-img2"><img src="파크하얏트3.png"></div>
+        <div class="re-text"><p>@user-name</p><p>정말 깔끔하고 모던한 느낌. 전체적으로 인테리어가 세련되어서 인스타 감성도 만족했어요!</p></div>
+      </div>
+    </div>
+    </div>
+
+
+
+     <!--2번-->
+    <div class="reservation">
+    
+      <div class="re-user"><p>쉼표하우스 유저들의 후기</p></div>
+      <div class="re-star"><span>★</span> 4.7/5.0</div>
+    
+
+    
+    <div class="re-big-box">
+      <div class="re-box1">
+        <div class="re-img2"><img src="파크하얏트2.png"></div>
+        <div class="re-text"><p>@user-name</p><p>너무 만족스러운 여행이었어요! 방도 깨끗하고 직원분들도 정말 친절하셨어요. 위치도 좋고 다시 방문하고 싶어요.</p></div>
+      </div>
+
+
+      <div class="re-box2">
+        <div class="re-img2"><img src="파크하얏트.png"></div>
+        <div class="re-text"><p>@user-name</p><p>조용하고 편안한 분위기. 가족여행으로 방문했는데, 아이들도 좋아하고 침구도 폭신해서 너무 좋았어요.</p></div>
+      </div>
+    </div>
+
+    <div class="re-big-box" id="re-big-box">
+      <div class="re-box3">
+
+        <div class="re-img2"><img src="파크하얏트2.png"></div>
+        <div class="re-text"><p>@user-name</p><p>주차장 넓고 조식도 맛있어요. 주차가 여유롭고 조식이 정갈하고 깔끔해서 기억에 남네요.</p></div>
+      </div>
+
+
+      <div class="re-box4">
+
+        <div class="re-img2"><img src="파크하얏트3.png"></div>
+        <div class="re-text"><p>@user-name</p><p>정말 깔끔하고 모던한 느낌. 전체적으로 인테리어가 세련되어서 인스타 감성도 만족했어요!</p></div>
+      </div>
+    </div>
+    </div>
+
+
+
+     <!--3번-->
+    <div class="reservation">
+    
+      <div class="re-user"><p>쉼표하우스 유저들의 후기</p></div>
+      <div class="re-star"><span>★</span> 4.7/5.0</div>
+    
+
+    
+    <div class="re-big-box">
+      <div class="re-box1">
+
+        <div class="re-img2"><img src="파크하얏트3.png"></div>
+        <div class="re-text"><p>@user-name</p><p>너무 만족스러운 여행이었어요! 방도 깨끗하고 직원분들도 정말 친절하셨어요. 위치도 좋고 다시 방문하고 싶어요.</p></div>
+      </div>
+
+
+      <div class="re-box2">
+
+        <div class="re-img2"><img src="파크하얏트.png"></div>
+        <div class="re-text"><p>@user-name</p><p>조용하고 편안한 분위기. 가족여행으로 방문했는데, 아이들도 좋아하고 침구도 폭신해서 너무 좋았어요.</p></div>
+      </div>
+    </div>
+
+    <div class="re-big-box" id="re-big-box">
+      <div class="re-box3">
+
+        <div class="re-img2"><img src="파크하얏트2.png"></div>
+        <div class="re-text"><p>@user-name</p><p>주차장 넓고 조식도 맛있어요. 주차가 여유롭고 조식이 정갈하고 깔끔해서 기억에 남네요.</p></div>
+      </div>
+
+
+      <div class="re-box4">
+
+        <div class="re-img2"><img src="파크하얏트3.png"></div>
+        <div class="re-text"><p>@user-name</p><p>정말 깔끔하고 모던한 느낌. 전체적으로 인테리어가 세련되어서 인스타 감성도 만족했어요!</p></div>
+      </div>
+    </div>
+    </div>
+
+  </section>
+
+</div>
+
+
+  
+
+
+
+<!-- 5. 푸터 -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>쉼표하우스</h3>
+          <ul>
+            <li><a href="#about">회사소개</a></li>
+            <li><a href="#careers">채용정보</a></li>
+            <li><a href="#press">보도자료</a></li>
+            <li><a href="#blog">블로그</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>고객지원</h3>
+          <ul>
+            <li><a href="#help">도움말</a></li>
+            <li><a href="#contact">문의하기</a></li>
+            <li><a href="#cancel">취소정책</a></li>
+            <li><a href="#safety">안전정보</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>호스트</h3>
+          <ul>
+            <li><a href="#host">숙소 등록하기</a></li>
+            <li><a href="#host-guide">호스트 가이드</a></li>
+            <li><a href="#resources">리소스 센터</a></li>
+            <li><a href="#community">커뮤니티</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>정책</h3>
+          <ul>
+            <li><a href="#terms">이용약관</a></li>
+            <li><a href="#privacy">개인정보처리방침</a></li>
+            <li><a href="#cookie">쿠키정책</a></li>
+            <li><a href="#accessibility">접근성</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Comma House. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  /*객실상세*/
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll(".room-layout").forEach(layout => {
+      const slides = layout.querySelectorAll(".slides img");
+      const prev = layout.querySelector(".prev");
+      const next = layout.querySelector(".next");
+      let current = 0;
+
+      showSlides();
+
+      prev.onclick = () => {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlides();
+      };
+
+      next.onclick = () => {
+        current = (current + 1) % slides.length;
+        showSlides();
+      };
+
+      function showSlides() {
+        slides.forEach((img, i) => {
+          img.style.display = i === current ? "block" : "none";
+        });
+      }
+    });
+  });
+ 
+  /*메인*/
+      function changeMainImage(thumbnail, mainImgId) {
+      const mainImage = document.getElementById(mainImgId);
+      mainImage.src = thumbnail.src;
+      
+
+      const thumbnails = thumbnail.parentElement.querySelectorAll('img');
+      thumbnails.forEach(img => img.classList.remove('active'));
+      thumbnail.classList.add('active');
+    }
+
+    /*리뷰 슬라이드*/
+  document.addEventListener("DOMContentLoaded", function() {
+    const container = document.querySelector(".reser-sec");
+    const slides = container.querySelectorAll(".reservation");
+    const prev = container.querySelector(".review-prev");
+    const next = container.querySelector(".review-next");
+    let current = 0;
+
+    function showSlides() {
+      slides.forEach((slide, i) => {
+        slide.style.display = (i === current) ? "block" : "none";
+      });
+    }
+
+    showSlides();
+
+    prev.addEventListener("click", () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlides();
+    });
+
+    next.addEventListener("click", () => {
+      current = (current + 1) % slides.length;
+      showSlides();
+    });
+  });
+
+
+  </script>
+
+
+</body>
+</html>

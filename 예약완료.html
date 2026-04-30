@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+  <meta charset = "UTF-8">
+  <title> 계좌 이체 </title>
+  <style>
+    body {
+  font-family: 'Apple SD Gothic Neo', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 500px;
+  margin: 60px auto;
+  background-color: #fff;
+  padding: 30px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.transfer-box {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.notice {
+  color: #d9534f;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  display: block;
+  width: 100%;
+  background-color: #ff4d4f;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #e04343;
+}
+
+  </style>
+</head>
+<body>
+  <div class = "container">
+    <h1> 계좌 이체 정보 </h1>
+    
+    <div class = "transfer-box">
+      <p> <strong> 은행명: </strong> 동양은행 </p>
+      <p> <strong> 계좌번호: </strong> 123-4567-8901 </p>
+      <p> <strong> 예금주: </strong> 쉼표하우스 </p>
+      <p> <strong> 결제 금액: </strong> 90,000원 </p>
+    </div>
+
+    <p class = "notice"> ※ 예약자 이름으로 입금해 주세요. <br> 입금 확인 후 예약이 확정됩니다. </p>
+
+    <button class = "back-button" onclick = "history.back()"> 뒤로 가기 </button>
+    
+  </div>
+</body>
+</html>

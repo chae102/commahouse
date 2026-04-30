@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>롯데워터파크 하이시즌 종일권 | COMMA HOUSE</title>
+  <style>
+    
+        *{
+                padding:0px; 
+                margin:0px; 
+                box-sizing:border-box; 
+                letter-spacing: 2px;
+            }
+            body{
+              background-color: #f7f4eb;
+              
+            }
+            a{
+                text-decoration:none;
+                color:#1f1f1f;
+            }
+            /*헤더*/
+            .header1{
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;
+                height: 60px;
+                z-index: 100;
+                background-color: #31422e;
+                
+            }
+            .header2{
+              visibility: hidden;
+              width: 100%;
+              height: 60px;
+              
+            }
+            .header1 a{
+              color:white;
+              letter-spacing: 5px;
+            }
+            ul{
+                list-style: none;
+            }
+            .header-left{
+              width:20%;
+              height:60px;
+              float:left;
+            }
+            .header-left>a>img{
+              width:25px;
+              height:35px;
+              margin-left:30px;
+              margin-top:12px;
+            }
+            .header-left>a>span{
+              display:inline-block;
+              font-size: 15px;
+              margin-left:10px;
+              font-weight: 800;
+              letter-spacing: 5px;
+              text-align: justify;
+            }
+            .header-center{
+              width:60%;
+              text-align: center;
+              float:left;
+              margin-top:16px;
+              
+            }
+            .header-center>ul>li{
+              display:inline-block;
+              width:20%;
+              font-size: 15px;
+            }
+            .header-right{
+              width:10%;
+              float:right;
+              margin-top:16px;
+            }
+            .header-right a{
+              border-radius: 18px;
+              border:2px solid white;
+              padding:5px 15px;
+              font-size: 14px;
+              letter-spacing: 3px;
+            }
+            .header-center a:hover{
+              text-decoration: underline;
+            }
+            .header-right a:hover{
+              color:#31422e;
+              background-color: white;
+            }
+
+
+
+
+    #body{
+      width:60%;
+      position: relative;
+      left:20%;
+      background-color: white;
+      box-shadow: 2px 2px 5px #999;
+      border-radius:70px;
+      overflow: hidden;
+      margin:50px 0px;
+    }
+
+    
+    
+
+    /* 메인 이미지 */
+    #main-photo{
+      width:100%;
+      position:relative;
+      left:0%;
+      margin-top:0px;
+      background-color: white;
+      border-radius: 15px
+      
+      
+    }
+    .image-gallery {
+      width:90%;
+      height: 450px;
+      position:relative;
+      left:5%;
+      top:40px;
+    
+      
+    }
+    .large {
+      width: 100%;
+      position: relative;
+
+      
+    }
+    .large img {
+      float:left;
+      width: 100%;
+      height: 450px;
+      border-radius: 12px 0px 0px 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+
+
+    .large img:hover {
+      box-shadow: 0 7px 10px rgba(0,0,0,0.15);
+    }
+   
+
+
+    /* 메인 사진 설명 */
+    .main-photo-text{
+      width:90%;
+      position:relative;
+      left:5%;
+      height:230px;
+    }
+    #main-photo h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #001519;
+      position: absolute;
+      left:10px;
+      top:-10px;
+    }
+
+    
+
+    .info{
+      position:relative;
+      width:100%;
+    }
+    .info p {
+      
+      font-size: 16px;
+      color: #666;
+    }
+    .stars {
+      font-size: 18px;
+      color: #f5d623;
+      font-weight: 700;
+      position: absolute;
+      left:10px;
+      top:120px;
+      
+      
+    }
+    .tax{
+      font-weight: 900;
+      font-size:28px;
+      position:absolute;
+      right:8px;
+      top:90px;
+      text-shadow: 1px 1px 2px #b2b8b3;
+      
+    }
+    .tax>span{
+      color:rgb(168, 27, 27);
+      padding-right: 5px;
+    }
+    .package-re{
+        width:112%;
+        height:50px;
+        font-size: 20px;
+        text-align: center;
+        line-height: 50px;
+        position:absolute;
+        bottom:-230px;
+        right:-6%;
+    }
+    .package-re>a{
+        display: block;
+        color:white;
+        font-weight: 550;
+        width:100%;
+        height:50px;
+        background-color: #31422e;
+        transition: all 0.5s;
+    }
+    .package-re>a:hover{
+        background-color: rgb(214, 214, 214);
+        box-shadow: 2px 2px 5px #999;
+
+        color:black;
+    }
+
+    /*테이블*/
+      h1 {
+    text-align: center;
+    color: #31422e;
+    font-size: 28px;
+    margin-bottom: 10px;
+    margin-top:70px;
+  }
+  p.description {
+    text-align: center;
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  table {
+    width: 85%;
+    margin-left:7.5%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  
+  }
+  caption {
+    font-size: 1.3em;
+    margin: 15px;
+    font-weight: 700;
+    color: #31422e;
+
+  }
+  thead th {
+    background-color:#31422e;
+    color: #ffffff;
+    padding: 15px;
+    letter-spacing: 0.5px;
+   
+  }
+  tbody td {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 20px;
+    line-height: 1.6;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #f1f8e9;
+  }
+  tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  tbody tr:hover {
+    background-color: #cfd4cb;
+    transition: background-color 0.3s ease;
+  }
+  tfoot td {
+    padding: 12px;
+    background-color: #31422e;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+  }
+  .table{
+    height:700px;
+  }
+  
+
+    
+   
+    
+    .int{
+      width:100%;
+    }
+    
+    .int h2{
+    margin-bottom:20px;
+    font-size:25px;
+    font-weight: 800;
+
+   }
+   .int p{
+    font-size: 18px;
+   }
+    
+    .int-img-box{
+      clear:both;
+      width:100%;
+      height:1450px;
+      position: relative;
+      padding-bottom:100px;
+      padding-top:100px;
+      background-color:#f1f8e9;
+
+    }
+    .int-img-box img{
+      display:block;
+      width:100%;
+      height:350px;
+      
+    }
+    .back{
+      width:60%;
+      height:350px;
+      float:left;
+
+    }
+    #back{
+      width:60%;
+      margin:100px 0px;
+      height:350px;
+      float:right;
+
+    }
+    .int-img{
+      width:100%;
+      
+      overflow: hidden;
+    }
+    #int-img{
+      width:100%;
+      
+      overflow: hidden;
+    }
+
+
+   .int-text1{
+    width:37%;
+    height:350px;
+    float:right;
+    padding-left: 15px;
+    background-color: white;
+
+   }
+   .int-text1>h2, .int-text1>p{
+    position:relative;
+    top:33%;
+    width:90%;
+    left:10px;
+   }
+   .int-text2>h2, .int-text2>p{
+    position:relative;
+    top:33%;
+    width:90%;
+    right:0;
+    text-align: right;
+    left:30px;
+
+    
+   }
+   .int-text3>h2, .int-text3>p{
+    position:relative;
+    top:33%;
+    width:90%;
+    left:10px;
+
+    
+   }
+   
+   .int-text2{
+    display:block;
+    float:left;
+    width:37%;
+    height:350px;
+    padding-right: 20px;
+    margin:100px 0px;
+    background-color:white;
+
+   }
+   .int-text3{
+    display:block;
+    float:right;
+    width:37%;
+    height:350px;
+    padding-left: 15px;
+    background-color:white;
+   }
+   .int span{
+    font-weight: 800;
+    color:#31422e;
+    font-size: 19px;
+   }
+   
+
+   
+ 
+  
+    footer{
+    
+      margin:0;
+      padding:0;
+      display: block;
+      width:100%;
+      height:600px;
+      color:white;
+      background-color: #222;
+      overflow: hidden;
+    }
+    footer a{
+      color:white;
+    }
+    .foot-top{
+      width:100%;
+      height:350px;
+      text-align: center;
+      background-color: white;
+      padding-top:30px;
+      color:#31422e;
+      
+    }
+    .foot-top>h2{
+      font-size: 50px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+    .foot-top>p{
+      font-size: 13px;
+      margin-bottom: 60px;
+    }
+    .foot-top a{
+      display: block;
+      width:20%;
+      height:70px;
+      background-color: #31422e;
+      border-radius: 30px;
+      position: relative;
+      left:40%;
+      line-height: 70px;
+    }
+    .foot-left{
+      width:52%;
+      height:250px;
+      float:left;
+      background-color: #31422e;
+      padding:60px 20px;
+      line-height: 20px;
+      
+    }
+    .foot-left>div{
+      width:20%;
+      height:250px;
+      float:left;
+      position: relative;
+    }
+    .foot-left>div>img{
+      width:50px;
+      height:65px;
+      position: absolute;
+      left:40px;
+      top:10px;
+    }
+    .foot-left>p{
+      display: block;
+      width:80%;
+      height:250px;
+      font-size:12px;
+      float:left;
+      opacity: 0.8;
+    }
+    .foot-center{
+      width:18%;
+      height:250px;
+      float:left;
+      background-color: #31422e;
+      padding:20px 10px;
+      font-size: 14px;
+      line-height: 30px;
+      
+    }
+    .foot-center>h3{
+      line-height: 50px;
+      font-size: 15px;
+      opacity: 0.8;
+    }
+    .foot-right{
+      width:30%;
+      height:250px;
+      float:right;
+      background-color: #31422e;
+      padding:20px 10px;
+      font-size: 14px;
+      line-height: 25px;
+     
+    }
+    .foot-right>h3{
+      line-height: 50px;
+      font-size: 15px;
+      opacity: 0.8;
+    }
+    .foot-right a, .foot-center a{
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+
+
+    
+    @keyframes big {
+      0% { transform: scale(1,1)  }
+      100% {transform: scale(1.1,1.1) }
+    }
+  </style>
+</head>
+<body>
+  <header>
+   
+    <div class="header1">
+      <div class="header-left"><a href="main.html"><img src="흰색로고.png"><span>COMMA<br>HOUSE</span></a></div>
+      <div class="header-center">
+      <ul>
+        <li><a href="main.html">HOME</a></li>
+        <li><a href="search.html">SEARCH</a></li>
+        <li><a href="introduce.html">INTRODUCE</a></li>
+        <li><a href="question.html">QUESTION</a></li>
+      </ul>
+      </div>
+      <div class="header-right"><a href="mypage.html" class="mypage">MY PAGE</a></div>
+    </div>
+    <div class="header2"></div>
+  </header>
+<div id="body">
+  <div id="main-photo">
+    <div class="image-gallery">
+      <div class="large">
+        <img id="mainLargeImg" src="롯데워터파크.png" alt="메인 이미지" />
+      </div>
+    </div>
+    <div class="main-photo-text">
+      <h1>롯데워터파크 하이시즌 종일권</h1>
+      <div class="info">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <div class="tax"><span>50%</span> 27,000원~</div>
+        <div class="package-re"><a href="#">바로예약</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="int">
+    <div class="int-img-box">
+      <div class="back">
+        <div class="int-img">
+          <img src="롯데워터파크_메인.png">
+        </div>
+      </div>
+      <div class="int-text1">
+        <h2>CHECK1</h2>
+        <p>국내 최대 규모 <span>롯데워터파크</span>에서 신나는 하이시즌!</p>
+      </div>
+      <div id="back">
+        <div id="int-img">
+          <img src="롯데워터파크_슬라이드.png">
+        </div>
+      </div>
+      <div class="int-text2">
+        <h2>CHECK2</h2>
+        <p>다양한 워터슬라이드와 <span>파도풀, 키즈존</span> 완비</p>
+      </div>
+      <div class="back">
+        <div class="int-img">
+          <img src="롯데워터파크_가족.png">
+        </div>
+      </div>
+      <div class="int-text3">
+        <h2>CHECK3</h2>
+        <p>가족, 친구, 연인 모두 <span>만족하는 워터파크</span></p>
+      </div>
+    </div>
+  </div>
+  <section class="table">
+    <h1>롯데워터파크 하이시즌 종일권</h1>
+    <p class="description">신나는 물놀이와 다양한 즐길 거리, 롯데워터파크에서!</p>
+    <table>
+      <caption>이용 안내</caption>
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>운영 시간</th>
+          <th>포함 사항</th>
+          <th>이용 방법</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>입장</td>
+          <td>09:30 ~ 19:00</td>
+          <td>워터파크 전 시설 이용</td>
+          <td>현장 매표소에서 바우처 제시</td>
+        </tr>
+        <tr>
+          <td>식사</td>
+          <td>자유</td>
+          <td>푸드코트 및 매점 이용 가능</td>
+          <td>별도 결제</td>
+        </tr>
+        <tr>
+          <td>부대시설</td>
+          <td>상시</td>
+          <td>락커, 샤워실 등</td>
+          <td>현장 안내 참고</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">롯데워터파크에서 시원한 하루를!</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+</div>
+<footer>
+  <!-- paste.txt의 footer 전체 복사 -->
+  <div class="foot-top">
+    <h2>enjoy your trip</h2>
+    <p>Comma House started with the simple idea of<br>creating a comfortable place where travelers can pause and rest during their journeys.</p>
+    <a href="introduce.html">BRAND STORY</a>
+  </div>
+  <div class="foot-left">
+    <div>
+      <img src="흰색로고.png">
+    </div>
+    <p>Company Name: Comma House | Owner: Chaerin Lee<br>
+Seoul, Guro-gu, Gyeongin-ro 445, Dongyang Mirae University<br>
+Email: coth4498@dongyang.ac.kr<br>
+Mail Order License No.: 2025-SeoulGuro-0456<br>
+Business Registration No.: 321-45-67890<br>
+KB Bank Account: 123401-04-987654<br>
+Business Hours: 24 hours | Office Days: Monday - Sunday</p>
+  </div>
+  <div class="foot-center">
+    <h3>customer care</h3>
+    <ul>
+      <li><a href="로그인.html">account</a></li>
+      <li><a href="이벤트소개.html">event</a></li>
+      <li><a href="question.html">FAQ</a></li>
+      <li><a href="이용약관.html">terms of use</a></li>
+    </ul>
+  </div>
+  <div class="foot-right">
+    <h3>Accommodations by Region</h3>
+    <ul>
+      <li><a href="숙소검색_제주1.html">jeju</a></li>
+      <li><a href="숙소검색_강릉1.html">gangnueng</a></li>
+      <li><a href="숙소검색_부산1.html">busan</a></li>
+      <li><a href="숙소검색_서울1.html">seoul</a></li>
+      <li><a href="숙소검색_경주1.html">gyeongju</a></li>
+      <li><a href="숙소검색_담양1.html">damyang</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

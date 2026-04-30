@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강릉 숙소 검색 결과</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+    <style>
+       
+       *{
+                padding:0px; 
+                margin:0px; 
+                box-sizing:border-box; 
+                letter-spacing: 2px;
+            }
+            body{
+              background-color: #f7f4eb;
+              
+            }
+            a{
+                text-decoration:none;
+                color:#1f1f1f;
+            }
+            /*헤더*/
+            .header1{
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;
+                height: 60px;
+                z-index: 100;
+                background-color: #31422e;
+                
+            }
+            .header2{
+              visibility: hidden;
+              width: 100%;
+              height: 60px;
+              
+            }
+            .header1 a{
+              color:white;
+              letter-spacing: 5px;
+            }
+            ul{
+                list-style: none;
+            }
+            .header-left{
+              width:20%;
+              height:60px;
+              float:left;
+            }
+            .header-left>a>img{
+              width:25px;
+              height:35px;
+              margin-left:30px;
+              margin-top:12px;
+            }
+            .header-left>a>span{
+              display:inline-block;
+              font-size: 15px;
+              margin-left:10px;
+              font-weight: 800;
+              letter-spacing: 5px;
+              text-align: justify;
+            }
+            .header-center{
+              width:60%;
+              text-align: center;
+              float:left;
+              margin-top:16px;
+              
+            }
+            .header-center>ul>li{
+              display:inline-block;
+              width:20%;
+              font-size: 15px;
+            }
+            .header-right{
+              width:10%;
+              float:right;
+              margin-top:16px;
+            }
+            .header-right a{
+              border-radius: 18px;
+              border:2px solid white;
+              padding:5px 15px;
+              font-size: 14px;
+              letter-spacing: 3px;
+            }
+            .header-center a:hover{
+              text-decoration: underline;
+            }
+            .header-right a:hover{
+              color:#31422e;
+              background-color: white;
+            }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+
+        .filters {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .map img{
+            width: 100%;
+            height:100%;
+            border-radius: 10px;           
+        }
+        .map-button{
+            position:relative;
+            width:250px;
+            height:200px;
+            box-shadow: 2px 2px 5px #666;
+            border-style:none;
+            border-radius: 10px;
+            color:white;
+            font-weight: 500;
+            font-size:13px;
+            
+        }
+        .map-button:hover{
+            opacity: 0.9;
+            box-shadow: 2px 2px 5px #31422e;
+        }
+
+        .filter-section {
+            margin-top: 30px;
+            margin-bottom: 2rem;
+        }
+
+        .filter-title {
+            font-size: 20PX;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+            padding: 10px 5px;
+            border-bottom: 1px solid #ddd;
+        }
+        .filter-title span{
+            font-size:10px;
+            font-weight: 200px;
+            color:#bfbcbc;
+        }
+        
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .filter-option input {
+            margin-right: 0.5rem;
+            
+        }
+
+        .checkbox-item {
+            margin: 10px 5px;
+            letter-spacing: 3px;
+            
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 8px;
+            transform: scale(1.2);
+    
+        }
+        
+        .checkbox-item label {
+            font-size: 5px;
+            cursor: pointer;
+        }
+
+        .range{
+            width:220px;
+        }
+        .range-price{
+            margin:5px;
+            font-size:10px;
+            color:#31422e;
+        }
+
+
+        .price-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .price-display {
+            text-align: center;
+            margin: 1rem 0;
+            padding: 0.75rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+
+
+        .results-section {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .results-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .results-count {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .sort-dropdown {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+        }
+        .accommodation-box{
+            width: 100%;
+            position: relative;
+        }
+        .heart-checkbox {
+  display: none;
+}
+
+    .heart-label {
+      position: absolute;
+      font-size: 20px;
+      border: 2px solid rgb(209, 206, 206);
+      border-radius: 50%;
+      padding: 2px 3px 2px 5px;
+      color: rgb(209, 206, 206);
+      opacity: 0.6;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      right: 30px;
+      top: 15px;
+      user-select: none;
+    }
+
+    .heart-label:hover {
+      transform: scale(1.1);
+      opacity: 1.0;
+    }
+
+     /* 각 체크박스에 해당하는 스타일 */
+     #heart1:checked + label,
+    #heart2:checked + label,
+    #heart3:checked + label,
+    #heart4:checked + label,
+    #heart5:checked + label {
+      color: rgb(229, 30, 53);
+      border-color: rgb(229, 30, 53);
+      opacity: 1.0;
+    }
+        .accommodation-card {
+            display: flex;
+            padding: 1.5rem;
+            border-bottom: 1px solid #e9ecef;
+            transition: background-color 0.3s;
+        }
+
+        .accommodation-card:hover {
+            background-color: #f8f9fa;
+        }
+
+        .accommodation-card:last-child {
+            border-bottom: none;
+        }
+
+        .card-image {
+            width: 300px;
+            height: 200px;
+            border-radius: 12px;
+            margin-right: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;}
+
+
+        .card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .accommodation-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.25rem;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .stars {
+            color: #ffc107;
+        }
+
+        .location {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .amenities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .amenity-tag {
+            background: #f0f0f0;
+            padding: 0.25rem 0.5rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .price-section {
+            margin-top: auto;
+            text-align: right;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .price1 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: rgb(214, 4, 4);
+        }
+
+        .price-unit {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 2rem;
+        }
+
+        .page-btn {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .page-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .page-btn.active {
+            background: #31422e;
+            color: white;
+            border-color: #31422e;
+        }
+
+        /*푸터*/
+
+        footer{
+    
+    margin:0;
+    padding:0;
+    display: block;
+    width:100%;
+    height:600px;
+    color:white;
+    background-color: #222;
+    overflow: hidden;
+  }
+  footer a{
+    color:white;
+  }
+  .foot-top{
+    width:100%;
+    height:350px;
+    text-align: center;
+    background-color: white;
+    padding-top:30px;
+    color:#31422e;
+    
+  }
+  .foot-top>h2{
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  .foot-top>p{
+    font-size: 13px;
+    margin-bottom: 60px;
+  }
+  .foot-top a{
+    display: block;
+    width:20%;
+    height:70px;
+    background-color: #31422e;
+    border-radius: 30px;
+    position: relative;
+    left:40%;
+    line-height: 70px;
+  }
+  .foot-left{
+    width:52%;
+    height:250px;
+    float:left;
+    background-color: #31422e;
+    padding:60px 20px;
+    line-height: 20px;
+    
+  }
+  .foot-left>div{
+    width:20%;
+    height:250px;
+    float:left;
+    position: relative;
+  }
+  .foot-left>div>img{
+    width:50px;
+    height:65px;
+    position: absolute;
+    left:40px;
+    top:10px;
+  }
+  .foot-left>p{
+    display: block;
+    width:80%;
+    height:250px;
+    font-size:12px;
+    float:left;
+    opacity: 0.8;
+  }
+  .foot-center{
+    width:18%;
+    height:250px;
+    float:left;
+    background-color: #31422e;
+    padding:20px 10px;
+    font-size: 14px;
+    line-height: 30px;
+    
+  }
+  .foot-center>h3{
+    line-height: 50px;
+    font-size: 15px;
+    opacity: 0.8;
+  }
+  .foot-right{
+    width:30%;
+    height:250px;
+    float:right;
+    background-color: #31422e;
+    padding:20px 10px;
+    font-size: 14px;
+    line-height: 25px;
+   
+  }
+  .foot-right>h3{
+    line-height: 50px;
+    font-size: 15px;
+    opacity: 0.8;
+  }
+  .foot-right a, .foot-center a{
+    font-size: 14px;
+    opacity: 0.8;
+  }
+        
+
+        
+    </style>
+</head>
+<body>
+    <header>      
+    <div class="header1">
+      <div class="header-left"><a href="main.html"><img src="logo.png"><span>COMMA<br>HOUSE</span></a></div>
+      <div class="header-center">
+      <ul>
+        <li><a href="main.html">HOME</a></li>
+        <li><a href="search.html">SEARCH</a></li>
+        <li><a href="introduce.html">INTRODUCE</a></li>
+        <li><a href="question.html">QUESTION</a></li>
+      </ul>
+      </div>
+      <div class="header-right"><a href="mypage.html" class="mypage">MY PAGE</a></div>
+    </div>
+    <div class="header2"></div>
+  </header>
+
+
+    <div class="main-container">
+        <aside class="filters">
+            <div class="map">
+                
+                <button type="button" class="map-button" onclick="지도.html"><img src="지도.png"></button>
+                </div>
+                <div class="filter-section">
+                    <div class="checkbox-item">
+                    <div class="filter-title">가격<span> 1박 기준</span></div>
+                    <input type="range" min="10,000" max="1,000,000" step="10,000" class="range">
+                    <div class="range-price">10,000원 이상 ~ 1,000,000원 이하</div>
+                </div>
+                </div>
+            
+
+            <div class="filter-section">
+                <h3 class="filter-title">숙소 유형</h3>
+                <label class="filter-option">
+                    <input type="checkbox" checked>
+                    호텔
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox">
+                    게스트하우스
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox">
+                    펜션
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox">
+                    모텔
+                </label>
+            </div>
+
+            <div class="filter-section">
+                <h3 class="filter-title">편의시설</h3>
+                <label class="filter-option">
+                    <input type="checkbox">
+                    무료 Wi-Fi
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox">
+                    주차장
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox">
+                    수영장
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox">
+                    피트니스센터
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox">
+                    조식 제공
+                </label>
+            </div>
+
+            <div class="filter-section">
+                <h3 class="filter-title">평점</h3>
+                <label class="filter-option">
+                    <input type="checkbox">
+                    9.0 이상 (최고)
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox">
+                    8.0 이상 (매우 좋음)
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox">
+                    7.0 이상 (좋음)
+                </label>
+            </div>
+        </aside>
+
+        <main class="results-section">
+            <div class="results-header">
+                <div class="results-count">총 324개</div>
+                <select class="sort-dropdown">
+                    <option>추천순</option>
+                    <option>가격 낮은순</option>
+                    <option>가격 높은순</option>
+                    <option>평점 높은순</option>
+                    <option>거리순</option>
+                </select>
+            </div>
+
+            <div class="accommodation-box">
+            <a href="123.html" div class="accommodation-card">
+                <div class="card-image">
+                    <img src="위너스.jpg" alt="숙소 이미지">
+                    
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="accommodation-name">주문진 위너스 호텔</h3>
+                            <div class="rating">
+                                <span class="stars">★★★★★</span>
+                                <span>9.0 (리뷰 68개)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location">강릉시 주문진읍 · 주문진시외터미널 차량 3분</div>
+                    <div class="amenities">
+                        <span class="amenity-tag">무료 Wi-Fi</span>
+                        <span class="amenity-tag">욕실용품</span>
+                        <span class="amenity-tag">무료주차</span>
+                        <span class="amenity-tag">드라이기</span>
+                        <span class="amenity-tag">주차장</span>
+                    </div>
+                    <div class="price-section">
+                        <div class="original-price">₩150,000</div>
+                        <div class="price1">₩120,000 <span class="price-unit">/박</span></div>
+                    </div>
+                </div>
+            </a>
+            <input type="checkbox" id="heart1" class="heart-checkbox">
+            <label for="heart1" class="heart-label">❤</label>
+            </div>
+
+            <div class="accommodation-box">
+            <a href="123.html" div class="accommodation-card">
+                <div class="card-image">
+                    <img src="여기어때.jpg" alt="숙소 이미지">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="accommodation-name">호텔 여기어때 강릉경포점</h3>
+                            <div class="rating">
+                                <span class="stars">★★★★★</span>
+                                <span>9.3 (리뷰 892개)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location">강릉시 강문동 · 경포해변 도보 5분</div>
+                    <div class="amenities">
+                        <span class="amenity-tag">무료 Wi-Fi</span>
+                        <span class="amenity-tag">에어컨</span>
+                        <span class="amenity-tag">냉장고</span>
+                        <span class="amenity-tag">주차장</span>
+                    </div>
+                    <div class="price-section">
+                        <div class="price">₩50,000 <span class="price-unit">/박</span></div>
+                    </div>
+                </div>
+            </a>
+            <input type="checkbox" id="heart2" class="heart-checkbox">
+            <label for="heart2" class="heart-label">❤</label>
+            </div>
+
+            <div class="accommodation-box">
+            <a href="123.html" div class="accommodation-card">
+                <div class="card-image">
+                    <img src="탑스빌.jpg" alt="숙소 이미지">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="accommodation-name">정동진호텔 탑스빌</h3>
+                            <div class="rating">
+                                <span class="stars">★★★★☆</span>
+                                <span>8.8 (리뷰 311개)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location">강릉시 강동면 · 정동진해변 도보 5분</div>
+                    <div class="amenities">
+                        <span class="amenity-tag">무료 Wi-Fi</span>
+                        <span class="amenity-tag">욕실용품</span>
+                        <span class="amenity-tag">에어컨</span>
+                        <span class="amenity-tag">주차장</span>
+                    </div>
+                    <div class="price-section">
+                        <div class="price">₩58,000 <span class="price-unit">/박</span></div>
+                    </div>
+                </div>
+            </a>
+            <input type="checkbox" id="heart3" class="heart-checkbox">
+            <label for="heart3" class="heart-label">❤</label>
+            </div>
+
+            <div class="accommodation-box">
+            <a href="123.html" div class="accommodation-card">
+                <div class="card-image">
+                    <img src="더홍씨.jpg" alt="숙소 이미지">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="accommodation-name">더 홍씨호텔 강릉</h3>
+                            <div class="rating">
+                                <span class="stars">★★★★★</span>
+                                <span>9.4 (리뷰 178개)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location">강릉시 교동 · 경포생태저류지 차량 5분</div>
+                    <div class="amenities">
+                        <span class="amenity-tag">무료 Wi-Fi</span>
+                        <span class="amenity-tag">피트니스</span>
+                        <span class="amenity-tag">라운지</span>
+                        <span class="amenity-tag">건조기</span>
+                        <span class="amenity-tag">무료주차</span>
+                    </div>
+                    <div class="price-section">
+                        <div class="original-price">₩97,000</div>
+                        <div class="price1">₩81,330 <span class="price-unit">/박</span></div>
+                    </div>
+                </div>
+            </a>
+            <input type="checkbox" id="heart4" class="heart-checkbox">
+            <label for="heart4" class="heart-label">❤</label>
+            </div>
+
+            <div class="accommodation-box">
+            <a href="123.html" div class="accommodation-card">
+                <div class="card-image">
+                    <img src="비즈니스.jpg" alt="숙소 이미지">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="accommodation-name">경포대 더호텔비즈니스</h3>
+                            <div class="rating">
+                                <span class="stars">★★★★★</span>
+                                <span>9.2 (리뷰 131개)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location">강릉시 안현동 · 경포해변 도보 1분</div>
+                    <div class="amenities">
+                        <span class="amenity-tag">무료 Wi-Fi</span>
+                        <span class="amenity-tag">주방/식당</span>
+                        <span class="amenity-tag">드라이기</span>
+                        <span class="amenity-tag">무료주차</span>
+                    </div>
+                    <div class="price-section">
+                        <div class="price">₩60,000 <span class="price-unit">/박</span></div>
+                    </div>
+                </div>
+            </a>
+            <input type="checkbox" id="heart5" class="heart-checkbox">
+            <label for="heart5" class="heart-label">❤</label>
+            </div>
+
+            <div class="accommodation-box">
+            <a href="123.html" div class="accommodation-card">
+                <div class="card-image">
+                    <img src="봄봄.jpg" alt="숙소 이미지">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="accommodation-name">강릉 호텔 봄봄</h3>
+                            <div class="rating">
+                                <span class="stars">★★★★★</span>
+                                <span>9.4 (리뷰 112개)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location">강릉시 교동 · 강릉KTX역 차량 10분</div>
+                    <div class="amenities">
+                        <span class="amenity-tag">무료 Wi-Fi</span>
+                        <span class="amenity-tag">미니바</span>
+                        <span class="amenity-tag">욕실용품</span>
+                        <span class="amenity-tag">무료주차</span>
+                    </div>
+                    <div class="price-section">
+                        <div class="price">₩150,000 <span class="price-unit">/박</span></div>
+                    </div>
+                </div>
+            </a>
+            <input type="checkbox" id="heart6" class="heart-checkbox">
+            <label for="heart6" class="heart-label">❤</label>
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn" onclick="window.location.href='숙소검색_강릉3.html'">이전</button>
+                <a href="숙소검색_강릉1.html"><button class="page-btn" id="page1">1</button></a>
+                <a href="숙소검색_강릉2.html"><button class="page-btn" id="page1">2</button></a>
+                <a href="숙소검색_강릉3.html"><button class="page-btn" id="page1">3</button></a>
+                <a href="숙소검색_강릉4.html"><button class="page-btn active" id="page1">4</button></a>
+                <a href="숙소검색_강릉5.html"><button class="page-btn" id="page1">5</button></a>
+                <button class="page-btn" onclick="window.location.href='숙소검색_강릉5.html'">다음</button>
+            </div>
+        </main>
+        
+    </div>
+    <footer>
+  
+
+
+        <div class="foot-top">
+          <h2>enjoy your trip</h2>
+          <p>Comma House started with the simple idea of<br>creating a comfortable place where travelers can pause and rest during their journeys.</p>
+          <a href="introduce.html">BRAND STORY</a>
+        </div>
+      
+        <div class="foot-left">
+          <div>
+          <img src="logo.png">
+          </div>
+          <p>Company Name: Comma House | Owner: Chaerin Lee<br>
+      Seoul, Guro-gu, Gyeongin-ro 445, Dongyang Mirae University<br>
+      Email: coth4498@dongyang.ac.kr<br>
+      Mail Order License No.: 2025-SeoulGuro-0456<br>
+      Business Registration No.: 321-45-67890<br>
+      KB Bank Account: 123401-04-987654<br>
+      
+      Business Hours: 24 hours | Office Days: Monday - Sunday</p>
+        </div>
+      
+        <div class="foot-center">
+          <h3>customer care</h3>
+          <ul>
+            <li><a href="로그인.html">account</a></li>
+            <li><a href="이벤트소개.html">event</a></li>
+            <li><a href="question.html">FAQ</a></li>
+            <li><a href="이용약관.html">terms of use</a></li>
+          </ul>
+        </div>
+      
+        <div class="foot-right">
+          <h3>Accommodations by Region</h3>
+          <ul>
+            <li><a href="숙소검색_제주1.html">jeju</a></li>
+            <li><a href="숙소검색_강릉1.html">gangnueng</a></li>
+            <li><a href="숙소검색_부산1.html">busan</a></li>
+            <li><a href="숙소검색_서울1.html">seoul</a></li>
+            <li><a href="숙소검색_경주1.html">gyeongju</a></li>
+            <li><a href="숙소검색_담양1.html">damyang</a></li>
+            
+          </ul>
+        </div>
+      
+      </footer>
+</body>
+</html>
